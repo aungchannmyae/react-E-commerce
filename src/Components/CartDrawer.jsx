@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import ProductsItemBox from "./ProductsItemBox";
+import carts from "../Data/carts";
 
 const CartDrawer = ({ products, cartDrawer, HandleCartDrawer }) => {
+  
   return (
     <div className="">
       <div
@@ -26,7 +29,7 @@ const CartDrawer = ({ products, cartDrawer, HandleCartDrawer }) => {
                     />
                   </svg>
                 </span>
-                Your Cart (<span>{}</span>)
+                Your Cart (<span>{carts.length}</span>)
               </h1>
             </div>
             <div
@@ -50,11 +53,11 @@ const CartDrawer = ({ products, cartDrawer, HandleCartDrawer }) => {
 
           <div className=" h-[450px] my-3 p-1 ">
             <div className=" scrollbar-hide flex flex-col gap-2 bg-white rounded-lg h-full overflow-x-hidden overflow-y-auto">
-              {products.map((product) => (
-                <div key={product.id} className=" group mx-4 my-6 p-2 flex flex-col rounded-md border border-black relative">
+              {carts.map((cart) => (
+                <div key={cart.id} className=" group mx-4 my-6 p-2 flex flex-col rounded-md border border-black relative">
                   <img
                     className=" absolute -top-6 left-6 w-[50px]"
-                    src={product.image}
+                    src={cart.product.image}
                     alt=""
                   />
                   <button className=" rounded-tr-md absolute top-0 right-0 opacity-0 group-hover:opacity-100 duration-200 bg-red-700 text-white">
