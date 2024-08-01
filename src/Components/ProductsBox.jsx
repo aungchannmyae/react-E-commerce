@@ -1,15 +1,14 @@
 import { Button } from "flowbite-react";
-import React from "react";
+import React, { useContext } from "react";
+import CategoriesProvider, { CategoryContext } from "../Context/CategoriesProvider";
+import { ProductContext } from "../Context/ProductsProvider";
+import { GeneralContext } from "../Context/GeneralProvider";
 
-const ProductsBox = ({
-  categories,
-  products,
-  productsBox,
-  HandleProductsBox,
-  HandleCategoryProducts,
-  HandleProductsItemBox,
-  boxProducts,
-}) => {
+const ProductsBox = ({}) => {
+  const {categories} = useContext(CategoryContext);
+  const {HandleCategoryProducts, boxProducts} = useContext(ProductContext);
+  const{productsBox, HandleProductsBox, HandleProductsItemBox} = useContext(GeneralContext);
+
   return (
     <div>
       <div
@@ -53,7 +52,7 @@ const ProductsBox = ({
               {categories.map((category) => (
                 <button
                   onClick={HandleCategoryProducts}
-                  id={Date.now()}
+                  key={Math.random()}
                   className=" px-2 active:scale-90 active:bg-cyan-500 focus:bg-cyan-500 duration-300 text-nowrap border border-black rounded-lg"
                   color="light"
                 >

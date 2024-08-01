@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "./Container";
+import { GeneralContext } from "../Context/GeneralProvider";
+import { ProductContext } from "../Context/ProductsProvider";
 
-const NavBar = ({ cartDrawer, HandleCartDrawer, HandleProductsBox, HandleCategoryProducts }) => {
+const NavBar = ({  }) => {
   // const [cartDrawer, SetCartDrawer] = useState(false);
   // const HandleCartDrawer = () => {
   //     SetCartDrawer(!cartDrawer)
   // }
-  
+  const {cartDrawer, HandleCartDrawer, HandleProductsBox } = useContext(GeneralContext)
+  const {HandleCategoryProducts} = useContext(ProductContext)
 
   return (
     <Container>

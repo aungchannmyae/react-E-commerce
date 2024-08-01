@@ -1,11 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GeneralContext } from "../Context/GeneralProvider";
 
-const ProductsItemBox = ({
-  categories,
-  products,
-  productsItemBox,
-  HandleProductsItemBox,
-}) => {
+const ProductsItemBox = ({}) => {
+  const {productsItemBox, HandleProductsItemBox,} = useContext(GeneralContext);
   return (
     <div>
       

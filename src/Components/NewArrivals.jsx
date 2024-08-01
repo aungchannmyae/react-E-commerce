@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "./Container";
 import { Button, Carousel } from "flowbite-react";
 import { HiOutlineArrowRight, HiShoppingCart } from "react-icons/hi";
+import { ProductContext } from "../Context/ProductsProvider";
+import { CategoryContext } from "../Context/CategoriesProvider";
+import { GeneralContext } from "../Context/GeneralProvider";
 
-const NewArrivals = ({ categories, products, HandleProductsBox, HandleProductsItemBox }) => {
+const NewArrivals = ({ }) => {
+  const { products} = useContext(ProductContext);
+  const { categories} = useContext(CategoryContext);
+  const {HandleProductsBox, HandleProductsItemBox} = useContext(GeneralContext);
   return (
     <div id="newArrivals" className=" my-5 m-auto w-[1400px] h-[400px]">
       <Carousel

@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "./Container";
+import { ProductContext } from "../Context/ProductsProvider";
+import { GeneralContext } from "../Context/GeneralProvider";
 
-const ProductsSection = ({ categories, products, HandleProductsBox, HandleCategoryProducts, HandleSearchToProductBox }) => {
+const ProductsSection = ({ }) => {
+
+  const {HandleCategoryProducts} = useContext(ProductContext);
+  const {HandleProductsBox} = useContext(GeneralContext);
+
   const [FirstSpan, SetFirstSpan] = useState(true);
   const FirstSpanHandle = () => {
     SetFirstSpan(!FirstSpan);

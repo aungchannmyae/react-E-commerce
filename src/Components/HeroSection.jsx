@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "./Container";
 import { Button, Carousel } from "flowbite-react";
+import { GeneralContext } from "../Context/GeneralProvider";
 
-const FavoriteSection = ({productsItemBox, HandleProductsItemBox}) => {
+const FavoriteSection = ({}) => {
   const HeroProducts = [
     {
       id: 1,
@@ -35,6 +36,8 @@ const FavoriteSection = ({productsItemBox, HandleProductsItemBox}) => {
       rating: { rate: 2.9, count: 250 },
     },
   ];
+
+  const {productsItemBox, HandleProductsItemBox} = useContext(GeneralContext);
 
   return (
     <Container>

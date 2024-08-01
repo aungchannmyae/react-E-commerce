@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ProductsItemBox from "./ProductsItemBox";
-import carts from "../Data/carts";
+import CartsProvider, { CartContext } from "../Context/CartsProvider";
+import { GeneralContext } from "../Context/GeneralProvider";
 
-const CartDrawer = ({ products, cartDrawer, HandleCartDrawer }) => {
-  
+const CartDrawer = ({  }) => {
+  const {carts} = useContext(CartContext);
+  const {cartDrawer, HandleCartDrawer} = useContext(GeneralContext);
   return (
     <div className="">
       <div
