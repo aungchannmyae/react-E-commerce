@@ -1,9 +1,7 @@
-import React, { createContext, useState } from "react";
+import { create } from "zustand";
 
-export const ProductContext = createContext();
-
-const ProductsProvider = ({ children }) => {
-  const [products, setProducts] = useState([
+const useProductsStore = create((set) => ({
+  products: [
     {
       id: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -210,24 +208,21 @@ const ProductsProvider = ({ children }) => {
       image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       rating: { rate: 3.6, count: 145 },
     },
-  ]);
+  ],
+  // boxProducts: [],
 
-  const [boxProducts, setBoxProducts] = useState(products);
+  // appendArray: () =>
+  //   set((state) => ({
+  //     boxProducts: [...state.boxProducts, ...state.products],
+  //   })),
 
-  const HandleCategoryProducts = (currentCategoryProduct) => {
+  filterProduct: (currentProduct) =>
+    set((state) => ({
+      products: state.products.filter(
+        (el) => el.category === currentProduct || currentProduct === "All"
+      ),
+    })),
 
-    const New = products.filter(
-      (product) =>
-        product.category === currentCategoryProduct ||
-        currentCategoryProduct === "All"
-    );
-    setBoxProducts(New);
-  };
-  return (
-    <ProductContext.Provider value={{ products, boxProducts, HandleCategoryProducts }}>
-      {children}
-    </ProductContext.Provider>
-  );
-};
+}));
 
-export default ProductsProvider;
+export default useProductsStore;

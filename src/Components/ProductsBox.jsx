@@ -1,13 +1,32 @@
 import { Button } from "flowbite-react";
-import React, { useContext } from "react";
-import CategoriesProvider, { CategoryContext } from "../Context/CategoriesProvider";
+import React, { useContext, useState } from "react";
+import CategoriesProvider, {
+  CategoryContext,
+} from "../Context/CategoriesProvider";
 import { ProductContext } from "../Context/ProductsProvider";
 import { GeneralContext } from "../Context/GeneralProvider";
+import useCategoriesStore from "../store/CategoryStore";
+import CategoryBtn from "./CategoryBtn";
+import ProductsBoxItem from "./ProductsBoxItem";
+import useProductsStore from "../store/ProductStore";
 
 const ProductsBox = ({}) => {
-  const {categories} = useContext(CategoryContext);
-  const {HandleCategoryProducts, boxProducts} = useContext(ProductContext);
-  const{productsBox, HandleProductsBox, HandleProductsItemBox} = useContext(GeneralContext);
+  // const { boxProducts, HandleCategoryProducts} = useContext(ProductContext);
+  const { productsBox, HandleProductsBox, HandleProductsItemBox } =
+    useContext(GeneralContext);
+  const { categories } = useCategoriesStore();
+  const { products, filterProduct } = useProductsStore();
+  const [boxProducts, setBoxProducts] = useState(products);
+
+  const handleCategoryProducts = (currentCategoryProduct) => {
+
+    const New = products.filter(
+      (product) =>
+        product.category === currentCategoryProduct ||
+        currentCategoryProduct === "All"
+    );
+    setBoxProducts(New);
+  };
 
   return (
     <div>
@@ -41,23 +60,12 @@ const ProductsBox = ({}) => {
             </div>
 
             <div className=" col-span-7 category-bar flex gap-2 overflow-x-auto ">
-              <button
-              
-                id="submit"
-                onClick={HandleCategoryProducts}
-                className=" active:scale-90 active:bg-cyan-500 focus:bg-cyan-500 duration-300 w-[80px] border border-black rounded-lg"
-              >
-                All
-              </button>
               {categories.map((category) => (
-                <button
-                  onClick={HandleCategoryProducts}
-                  key={Math.random()}
-                  className=" px-2 active:scale-90 active:bg-cyan-500 focus:bg-cyan-500 duration-300 text-nowrap border border-black rounded-lg"
-                  color="light"
-                >
-                  {category}
-                </button>
+                <CategoryBtn
+                  key={category.id}
+                  handleCategoryProducts={handleCategoryProducts}
+                  category={category}
+                />
               ))}
             </div>
             <div
@@ -81,17 +89,9 @@ const ProductsBox = ({}) => {
 
           <div className="">
             <div className=" scrollbar-hide grid grid-flow-row grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 h-[488px] overflow-y-scroll">
-              {boxProducts.map(
-                ({ id, image, title, description, price, rating }) => (
-                  <div
-                  onClick={HandleProductsItemBox}
-                    key={id}
-                    className=" group duration-100 active:scale-95 col-span-1 h-[250px] bg-white rounded-md"
-                  >
-                    <img className=" group-hover:scale-95 duration-200 w-[70px]" src={image} alt="" />
-                  </div>
-                )
-              )}
+              {boxProducts.map((boxProduct) => (
+                <ProductsBoxItem boxProduct={boxProduct} />
+              ))}
             </div>
           </div>
         </div>
