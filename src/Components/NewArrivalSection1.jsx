@@ -1,12 +1,23 @@
 import { Button } from "flowbite-react";
 import { HiShoppingCart } from "react-icons/hi";
-import React from "react";
+import React, { useContext } from "react";
+import { GeneralContext } from "../Context/GeneralProvider";
+import useProductsStore from "../store/ProductStore";
 
 const NewArrivalSection1 = ({
   newProduct: { id, title, image, description },
 }) => {
+    const { HandleProductsBox, HandleProductsItemBox } =
+    useContext(GeneralContext);
+    const { filterItemBoxProducts} = useProductsStore();
+    const handleItemBoxProducts = () => {
+        HandleProductsItemBox();
+        filterItemBoxProducts(id);
+    
+      }
   return (
     <div
+    onClick={handleItemBoxProducts}
       key={id}
       className=" rounded-xl group duration-300 hover:scale-105 shadow-lg bg-white w-[240px] col-span-1 border borderr"
     >

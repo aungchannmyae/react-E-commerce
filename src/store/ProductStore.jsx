@@ -235,7 +235,7 @@ const useProductsStore = create((set) => ({
 
   newArrivalProductSection1: [
     {
-      id: 1,
+      id: 7,
       title: "White Gold Plated Princess",
       price: 9.99,
       description:
@@ -245,7 +245,7 @@ const useProductsStore = create((set) => ({
       rating: { rate: 3, count: 400 },
     },
     {
-      id: 2,
+      id: 11,
       title:
         "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
       price: 109,
@@ -256,7 +256,7 @@ const useProductsStore = create((set) => ({
       rating: { rate: 4.8, count: 319 },
     },
     {
-      id: 3,
+      id: 4,
       title: "Mens Casual Slim Fit",
       price: 15.99,
       description:
@@ -266,7 +266,7 @@ const useProductsStore = create((set) => ({
       rating: { rate: 2.1, count: 430 },
     },
     {
-      id: 4,
+      id: 17,
       title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
       price: 39.99,
       description:
@@ -278,7 +278,7 @@ const useProductsStore = create((set) => ({
   ],
   newArrivalProductSection2: [
     {
-      id: 1,
+      id: 9,
       title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
       price: 64,
       description:
@@ -288,7 +288,7 @@ const useProductsStore = create((set) => ({
       rating: { rate: 3.3, count: 203 },
     },
     {
-      id: 2,
+      id: 4,
       title: "Mens Casual Slim Fit",
       price: 15.99,
       description:
@@ -298,7 +298,7 @@ const useProductsStore = create((set) => ({
       rating: { rate: 2.1, count: 430 },
     },
     {
-      id: 3,
+      id: 18,
       title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
       price: 9.85,
       description:
@@ -308,7 +308,7 @@ const useProductsStore = create((set) => ({
       rating: { rate: 4.7, count: 130 },
     },
     {
-      id: 4,
+      id: 20,
       title: "DANVOUY Womens T Shirt Casual Cotton Short",
       price: 12.99,
       description:
