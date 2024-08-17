@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Container from "./Container";
 import { Button, Carousel } from "flowbite-react";
 import { GeneralContext } from "../Context/GeneralProvider";
+import useProductsStore from "../store/ProductStore";
 
 const FavoriteSection = ({}) => {
   const HeroProducts = [
@@ -37,7 +38,12 @@ const FavoriteSection = ({}) => {
     },
   ];
 
-  const {productsItemBox, HandleProductsItemBox} = useContext(GeneralContext);
+  const { productsItemBox, HandleProductsItemBox } = useContext(GeneralContext);
+  const { filterItemBoxProducts } = useProductsStore();
+  const handleItemBoxProducts = () => {
+    HandleProductsItemBox();
+    filterItemBoxProducts(id);
+  };
 
   return (
     <Container>
@@ -79,57 +85,25 @@ const FavoriteSection = ({}) => {
           pauseOnHover
           indicators=""
         >
-          <div className="flex h-full items-center justify-center bg-transparent dark:bg-gray-700 dark:text-white">
-            <div className=" flex justify-around items-center">
-              <div className=" w-[500px]">
-                <p>Our favorite Items</p>
-                <h1>{HeroProducts[0].title}</h1>
-                <p>{HeroProducts[0].description}</p>
-                <Button onClick={HandleProductsItemBox}>Shop Now</Button>
-              </div>
-              <div className=" w-[500px] flex items-center justify-center">
-                <img
-                  className=" w-[200px]"
-                  src={HeroProducts[0].image}
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flex h-full items-center justify-center bg-transparent dark:bg-gray-700 dark:text-white">
-            <div className=" flex justify-around items-center">
-              <div className=" w-[500px] flex items-center justify-center">
-                <img
-                  className=" w-[200px]"
-                  src={HeroProducts[1].image}
-                  alt=""
-                />
-              </div>
-              <div className=" w-[500px]">
-                <p>Our favorite Items</p>
-                <h1>{HeroProducts[1].title}</h1>
-                <p>{HeroProducts[1].description}</p>
-                <Button onClick={HandleProductsItemBox}>Shop Now</Button>
+          {HeroProducts.map((heroProduct) => (
+            <div key={heroProduct.id} className="flex h-full items-center justify-center bg-transparent dark:bg-gray-700 dark:text-white">
+              <div className=" flex justify-around items-center">
+                <div className=" w-[500px] flex items-center justify-center">
+                  <img
+                    className=" w-[200px]"
+                    src={heroProduct.image}
+                    alt=""
+                  />
+                </div>
+                <div className=" w-[500px]">
+                  <p>Our favorite Items</p>
+                  <h1>{heroProduct.title}</h1>
+                  <p>{heroProduct.description}</p>
+                  <Button>Shop Now</Button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex h-full items-center justify-center bg-transparent dark:bg-gray-700 dark:text-white">
-            <div className=" flex justify-around items-center">
-              <div className=" w-[500px]">
-                <p>Our favorite Items</p>
-                <h1>{HeroProducts[2].title}</h1>
-                <p>{HeroProducts[2].description}</p>
-                <Button onClick={HandleProductsItemBox}>Shop Now</Button>
-              </div>
-              <div className=" w-[500px] flex items-center justify-center">
-                <img
-                  className=" w-[200px]"
-                  src={HeroProducts[2].image}
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
+          ))}
         </Carousel>
       </div>
     </Container>

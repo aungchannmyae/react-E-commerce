@@ -223,6 +223,101 @@ const useProductsStore = create((set) => ({
       ),
     })),
 
+  itemBoxProducts: [],
+  filterItemBoxProducts: (currentItemId) =>
+    set((state) => ({
+      itemBoxProducts: [
+        //not continue to add the old array ******
+        //...state.itemBoxProducts,
+        ...state.products.filter((el) => el.id === currentItemId),
+      ],
+    })),
+
+  newArrivalProductSection1: [
+    {
+      id: 1,
+      title: "White Gold Plated Princess",
+      price: 9.99,
+      description:
+        "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      category: "jewelery",
+      image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      rating: { rate: 3, count: 400 },
+    },
+    {
+      id: 2,
+      title:
+        "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+      price: 109,
+      description:
+        "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+      category: "electronics",
+      image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      rating: { rate: 4.8, count: 319 },
+    },
+    {
+      id: 3,
+      title: "Mens Casual Slim Fit",
+      price: 15.99,
+      description:
+        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      category: "men's clothing",
+      image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      rating: { rate: 2.1, count: 430 },
+    },
+    {
+      id: 4,
+      title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+      price: 39.99,
+      description:
+        "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+      category: "women's clothing",
+      image: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      rating: { rate: 3.8, count: 679 },
+    },
+  ],
+  newArrivalProductSection2: [
+    {
+      id: 1,
+      title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+      price: 64,
+      description:
+        "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      category: "electronics",
+      image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      rating: { rate: 3.3, count: 203 },
+    },
+    {
+      id: 2,
+      title: "Mens Casual Slim Fit",
+      price: 15.99,
+      description:
+        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      category: "men's clothing",
+      image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      rating: { rate: 2.1, count: 430 },
+    },
+    {
+      id: 3,
+      title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      price: 9.85,
+      description:
+        "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+      category: "women's clothing",
+      image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+      rating: { rate: 4.7, count: 130 },
+    },
+    {
+      id: 4,
+      title: "DANVOUY Womens T Shirt Casual Cotton Short",
+      price: 12.99,
+      description:
+        "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+      category: "women's clothing",
+      image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      rating: { rate: 3.6, count: 145 },
+    },
+  ]
 }));
 
 export default useProductsStore;

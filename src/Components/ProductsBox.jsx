@@ -90,7 +90,7 @@ const ProductsBox = ({}) => {
           <div className="">
             <div className=" scrollbar-hide grid grid-flow-row grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 h-[488px] overflow-y-scroll">
               {boxProducts.map((boxProduct) => (
-                <ProductsBoxItem boxProduct={boxProduct} />
+                <ProductsBoxItem key={boxProduct.id} boxProduct={boxProduct} />
               ))}
             </div>
           </div>

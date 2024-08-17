@@ -5,11 +5,17 @@ import { HiOutlineArrowRight, HiShoppingCart } from "react-icons/hi";
 import { ProductContext } from "../Context/ProductsProvider";
 import { CategoryContext } from "../Context/CategoriesProvider";
 import { GeneralContext } from "../Context/GeneralProvider";
+import useProductsStore from "../store/ProductStore";
+import NewArrivalSection1 from "./NewArrivalSection1";
+import NewArrivalSection2 from "./NewArrivalSection2";
 
-const NewArrivals = ({ }) => {
-  const { products} = useContext(ProductContext);
-  const { categories} = useContext(CategoryContext);
-  const {HandleProductsBox, HandleProductsItemBox} = useContext(GeneralContext);
+const NewArrivals = ({}) => {
+  const { products } = useContext(ProductContext);
+  const { categories } = useContext(CategoryContext);
+  const { HandleProductsBox, HandleProductsItemBox } =
+    useContext(GeneralContext);
+  const { newArrivalProductSection1, newArrivalProductSection2 } =
+    useProductsStore();
   return (
     <div id="newArrivals" className=" my-5 m-auto w-[1400px] h-[400px]">
       <Carousel
@@ -51,69 +57,20 @@ const NewArrivals = ({ }) => {
       >
         <div className=" bg-stone-100 flex justify-center items-center m-auto">
           <div className=" p-4 gap-20 grid grid-cols-4">
-            {products
-              .filter((product) => product.id < 5)
-              .map(({ id, image, title, description }) => (
-                <div
-                  key={id}
-                  className=" rounded-xl group duration-300 hover:scale-105 shadow-lg bg-white w-[240px] col-span-1 border borderr"
-                >
-                  <div onClick={HandleProductsItemBox} className=" flex flex-col justify-center m-1 p-4 border border-black/50 border-t-0 border-r-0 border-b-1 border-l-1">
-                    <div>
-                      <img
-                        className=" duration-700 group-hover:scale-125 mx-auto h-[100px] mb-2"
-                        src={image}
-                        alt=""
-                      />
-                    </div>
-                    <div className=" h-[180px] flex flex-col gap-2">
-                      <h1 className=" box-heading-text text-lg font-semibold underline underline-offset-auto">
-                        {title}
-                      </h1>
-                      <p className=" box-inner-text text-sm">{description}</p>
-                    </div>
-                    <div className="">
-                      <Button className="">
-                        <HiShoppingCart className=" h-5 w-5" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {newArrivalProductSection1.map((newProduct) => (
+              <NewArrivalSection1 key={newProduct.id} newProduct={newProduct} />
+            ))}
           </div>
         </div>
 
         <div className=" bg-stone-100 flex justify-center items-center m-auto">
           <div className=" p-4 gap-20 grid grid-cols-4">
-            {products
-              .filter((product) => product.id > 16)
-              .map(({ id, image, title, description }) => (
-                <div
-                  key={id}
-                  className=" rounded-xl group duration-300 hover:scale-105 shadow-lg bg-white w-[240px] col-span-1 border"
-                >
-                  <div onClick={HandleProductsItemBox} className=" flex flex-col justify-center m-1 p-4 border border-black/50 border-t-0 border-r-0 border-b-1 border-l-1">
-                    <div>
-                      <img
-                        className=" duration-700 group-hover:scale-125 mx-auto h-[100px] mb-2"
-                        src={image}
-                        alt=""
-                      />
-                    </div>
-                    <div className=" h-[180px] flex flex-col gap-2">
-                      <h1 className=" box-heading-text text-lg font-semibold underline underline-offset-auto">
-                        {title}
-                      </h1>
-                      <p className=" box-inner-text text-sm">{description}</p>
-                    </div>
-                    <div className="">
-                      <Button>
-                        <HiShoppingCart className="h-5 w-5" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {newArrivalProductSection2.map((newProduct) => (
+              <NewArrivalSection2
+                key={newProduct.key}
+                newProduct={newProduct}
+              />
+            ))}
           </div>
         </div>
       </Carousel>
