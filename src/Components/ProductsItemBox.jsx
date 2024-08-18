@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { GeneralContext } from "../Context/GeneralProvider";
 import useProductsStore from "../store/ProductStore";
+import useGeneralStore from "../store/GeneralStore";
 
 const ProductsItemBox = ({}) => {
-  const { productsItemBox, HandleProductsItemBox } = useContext(GeneralContext);
+
+  const { productsItemBox, setProductsItemBox} = useGeneralStore();
   const { products, itemBoxProducts } = useProductsStore();
   return (
     <div>
@@ -18,7 +19,7 @@ const ProductsItemBox = ({}) => {
       </div>
 
       <div
-        onClick={HandleProductsItemBox}
+        onClick={setProductsItemBox}
         className={`${
           productsItemBox &&
           " translate-y-[px] opacity-100 fixed top-0 left-0 bg-slate-100 bg-opacity-75 w-[1519px] h-screen z-[999999997] "

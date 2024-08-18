@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Container from "./Container";
 import { Button, Carousel } from "flowbite-react";
-import { GeneralContext } from "../Context/GeneralProvider";
 import useProductsStore from "../store/ProductStore";
+import useGeneralStore from "../store/GeneralStore";
 
 const FavoriteSection = ({}) => {
   const HeroProducts = [
@@ -38,10 +38,10 @@ const FavoriteSection = ({}) => {
     },
   ];
 
-  const { productsItemBox, HandleProductsItemBox } = useContext(GeneralContext);
+  const { productsItemBox, setProductsItemBox} = useGeneralStore();
   const { filterItemBoxProducts } = useProductsStore();
   const handleItemBoxProducts = () => {
-    HandleProductsItemBox();
+    setProductsItemBox();
     filterItemBoxProducts(id);
   };
 

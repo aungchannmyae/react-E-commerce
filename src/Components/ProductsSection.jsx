@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import Container from "./Container";
 import { ProductContext } from "../Context/ProductsProvider";
-import { GeneralContext } from "../Context/GeneralProvider";
+import useGeneralStore from "../store/GeneralStore";
 
 const ProductsSection = ({ }) => {
 
   const {HandleCategoryProducts} = useContext(ProductContext);
-  const {HandleProductsBox} = useContext(GeneralContext);
+
+  const { setProductsBox} = useGeneralStore();
 
   const [FirstSpan, SetFirstSpan] = useState(true);
   const FirstSpanHandle = () => {
@@ -55,7 +56,7 @@ const ProductsSection = ({ }) => {
                 " pointer-events-none duration-700 bg-red-400 w-[570px]"
               } `}
             >
-              <button id="electronics" onClick={HandleProductsBox} className=" pointer-events-auto group overflow-hidden hover:bg-slate-600 active:scale-90 hover:text-white duration-200 flex flex-row gap-6 justify-center items-center border border-black py-2 pl-4 pr-6 rounded-full uppercase">
+              <button id="electronics" onClick={setProductsBox} className=" pointer-events-auto group overflow-hidden hover:bg-slate-600 active:scale-90 hover:text-white duration-200 flex flex-row gap-6 justify-center items-center border border-black py-2 pl-4 pr-6 rounded-full uppercase">
               electronics
             </button>
             </div>
@@ -81,7 +82,7 @@ const ProductsSection = ({ }) => {
             ></div>
           </div>
           <div className=" opacity-0 hover:opacity-100 duration-500 bg-teal-400 h-full w-[360px] rounded-lg flex justify-center items-center z-10 absolute top-[0px] right-[0px]">
-            <button id="electronics" onClick={HandleProductsBox} className=" group overflow-hidden hover:bg-slate-600 active:scale-90 hover:text-white duration-200 flex flex-row gap-6 justify-center items-center border border-black py-2 pl-4 pr-6 rounded-full uppercase">
+            <button id="electronics" onClick={setProductsBox} className=" group overflow-hidden hover:bg-slate-600 active:scale-90 hover:text-white duration-200 flex flex-row gap-6 justify-center items-center border border-black py-2 pl-4 pr-6 rounded-full uppercase">
               Shop More
               <svg
                 xmlns="http://www.w3.org/2000/svg"

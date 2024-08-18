@@ -209,19 +209,18 @@ const useProductsStore = create((set) => ({
       rating: { rate: 3.6, count: 145 },
     },
   ],
-  // boxProducts: [],
-
-  // appendArray: () =>
-  //   set((state) => ({
-  //     boxProducts: [...state.boxProducts, ...state.products],
-  //   })),
-
-  filterProduct: (currentProduct) =>
+  boxProducts: [],
+  setBoxProducts: (newProducts) =>
     set((state) => ({
-      products: state.products.filter(
-        (el) => el.category === currentProduct || currentProduct === "All"
-      ),
+      boxProducts: [...state.boxProducts, ...newProducts],
     })),
+
+  // filterProduct: (currentProduct) =>
+  //   set((state) => ({
+  //     products: state.products.filter(
+  //       (el) => el.category === currentProduct || currentProduct === "All"
+  //     ),
+  //   })),
 
   itemBoxProducts: [],
   filterItemBoxProducts: (currentItemId) =>
@@ -317,7 +316,15 @@ const useProductsStore = create((set) => ({
       image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       rating: { rate: 3.6, count: 145 },
     },
-  ]
+  ],
+  carts: [
+    {
+      id: 1,
+      product: {},
+      quantity: 0,
+      cost: 0,
+    },
+  ],
 }));
 
 export default useProductsStore;

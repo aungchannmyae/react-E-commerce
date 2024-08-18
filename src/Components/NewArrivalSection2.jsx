@@ -1,17 +1,17 @@
 import { Button } from "flowbite-react";
 import { HiShoppingCart } from "react-icons/hi";
 import React, { useContext } from "react";
-import { GeneralContext } from "../Context/GeneralProvider";
 import useProductsStore from "../store/ProductStore";
+import useGeneralStore from "../store/GeneralStore";
 
 const NewArrivalSection2 = ({
   newProduct: { id, title, image, description },
 }) => {
-  const { HandleProductsBox, HandleProductsItemBox } =
-    useContext(GeneralContext);
+
+  const { setProductsItemBox} = useGeneralStore();
     const {filterItemBoxProducts } = useProductsStore();
     const handleItemBoxProducts = () => {
-        HandleProductsItemBox();
+        setProductsItemBox();
         filterItemBoxProducts(id);
     
       }

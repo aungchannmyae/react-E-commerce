@@ -4,22 +4,21 @@ import CategoriesProvider, {
   CategoryContext,
 } from "../Context/CategoriesProvider";
 import { ProductContext } from "../Context/ProductsProvider";
-import { GeneralContext } from "../Context/GeneralProvider";
 import useCategoriesStore from "../store/CategoryStore";
 import CategoryBtn from "./CategoryBtn";
 import ProductsBoxItem from "./ProductsBoxItem";
 import useProductsStore from "../store/ProductStore";
+import useGeneralStore from "../store/GeneralStore";
 
 const ProductsBox = ({}) => {
-  // const { boxProducts, HandleCategoryProducts} = useContext(ProductContext);
-  const { productsBox, HandleProductsBox, HandleProductsItemBox } =
-    useContext(GeneralContext);
+
+  const { productsBox, setProductsBox } = useGeneralStore();
   const { categories } = useCategoriesStore();
-  const { products, filterProduct } = useProductsStore();
+  const { products } = useProductsStore();
+
   const [boxProducts, setBoxProducts] = useState(products);
 
   const handleCategoryProducts = (currentCategoryProduct) => {
-
     const New = products.filter(
       (product) =>
         product.category === currentCategoryProduct ||
@@ -69,7 +68,7 @@ const ProductsBox = ({}) => {
               ))}
             </div>
             <div
-              onClick={HandleProductsBox}
+              onClick={setProductsBox}
               className=" ml-auto active:scale-90 col-span-1"
             >
               <svg
@@ -97,7 +96,7 @@ const ProductsBox = ({}) => {
         </div>
       </div>
       <div
-        onClick={HandleProductsBox}
+        onClick={setProductsBox}
         className={`${
           productsBox &&
           " translate-y-0 opacity-100 fixed top-0 left-0 bg-slate-100 bg-opacity-75 w-[1519px] h-screen z-[999997]"

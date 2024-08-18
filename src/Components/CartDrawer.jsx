@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import ProductsItemBox from "./ProductsItemBox";
 import CartsProvider, { CartContext } from "../Context/CartsProvider";
-import { GeneralContext } from "../Context/GeneralProvider";
+import useGeneralStore from "../store/GeneralStore";
 
 const CartDrawer = ({  }) => {
   const {carts} = useContext(CartContext);
-  const {cartDrawer, HandleCartDrawer} = useContext(GeneralContext);
+
+  const { cartDrawer, setCartDrawer} = useGeneralStore();
   return (
     <div className="">
       <div
@@ -36,7 +37,7 @@ const CartDrawer = ({  }) => {
             </div>
             <div
               className=" active:scale-90 cursor-pointer"
-              onClick={HandleCartDrawer}
+              onClick={setCartDrawer}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

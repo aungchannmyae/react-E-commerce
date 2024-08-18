@@ -1,15 +1,12 @@
 import React, { useContext, useState } from "react";
 import Container from "./Container";
-import { GeneralContext } from "../Context/GeneralProvider";
 import { ProductContext } from "../Context/ProductsProvider";
 import { CartContext } from "../Context/CartsProvider";
+import useGeneralStore from "../store/GeneralStore";
 
 const NavBar = ({  }) => {
-  // const [cartDrawer, SetCartDrawer] = useState(false);
-  // const HandleCartDrawer = () => {
-  //     SetCartDrawer(!cartDrawer)
-  // }
-  const {cartDrawer, HandleCartDrawer, HandleProductsBox } = useContext(GeneralContext)
+
+  const { setCartDrawer, setProductsBox} = useGeneralStore();
   const {HandleCategoryProducts} = useContext(ProductContext)
   const {carts} = useContext(CartContext);
 
@@ -17,7 +14,7 @@ const NavBar = ({  }) => {
     <Container>
       <nav className=" border border-r-0 border-l-0 border-black select-none">
         <div className=" flex justify-between items-center">
-          <div onClick={HandleProductsBox} className=" cursor-pointer flex justify-center items-center w-[50px] py-3 hover:scale-125 duration-300">
+          <div onClick={setProductsBox} className=" cursor-pointer flex justify-center items-center w-[50px] py-3 hover:scale-125 duration-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -78,7 +75,7 @@ const NavBar = ({  }) => {
           </div>
           
           <div
-            onClick={HandleCartDrawer}
+            onClick={setCartDrawer}
             className=" relative active:scale-90 cursor-pointer flex justify-center items-center w-[50px] py-3 hover:scale-125 duration-300"
           >
             <svg

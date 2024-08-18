@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import useProductsStore from "../store/ProductStore";
-import { GeneralContext } from "../Context/GeneralProvider";
+import useGeneralStore from "../store/GeneralStore";
 
 const ProductsBoxItem = ({
   boxProduct: {
@@ -13,10 +13,11 @@ const ProductsBoxItem = ({
     rating: { rate, count },
   },
 }) => {
-  const {productsItemBox, HandleProductsItemBox,} = useContext(GeneralContext);
+
+  const { setProductsItemBox} = useGeneralStore();
   const { products, itemBoxProducts, filterItemBoxProducts} = useProductsStore();
   const handleItemBoxProducts = () => {
-    HandleProductsItemBox();
+    setProductsItemBox();
     filterItemBoxProducts(id);
 
   }
