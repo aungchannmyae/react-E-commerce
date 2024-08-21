@@ -209,18 +209,6 @@ const useProductsStore = create((set) => ({
       rating: { rate: 3.6, count: 145 },
     },
   ],
-  boxProducts: [],
-  setBoxProducts: (newProducts) =>
-    set((state) => ({
-      boxProducts: [...state.boxProducts, ...newProducts],
-    })),
-
-  // filterProduct: (currentProduct) =>
-  //   set((state) => ({
-  //     products: state.products.filter(
-  //       (el) => el.category === currentProduct || currentProduct === "All"
-  //     ),
-  //   })),
 
   itemBoxProducts: [],
   filterItemBoxProducts: (currentItemId) =>

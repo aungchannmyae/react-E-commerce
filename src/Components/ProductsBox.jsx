@@ -11,22 +11,12 @@ import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
 
 const ProductsBox = ({}) => {
-
   const { productsBox, setProductsBox } = useGeneralStore();
   const { categories } = useCategoriesStore();
-  const { products } = useProductsStore();
+  const { products, boxProducts, setBoxProducts } = useProductsStore();
 
-  const [boxProducts, setBoxProducts] = useState(products);
-
-  const handleCategoryProducts = (currentCategoryProduct) => {
-    const New = products.filter(
-      (product) =>
-        product.category === currentCategoryProduct ||
-        currentCategoryProduct === "All"
-    );
-    setBoxProducts(New);
-  };
-
+  const currentProducts = categories.find((el) => el.isActive === true);
+  console.log(currentProducts);
   return (
     <div>
       <div
@@ -62,7 +52,6 @@ const ProductsBox = ({}) => {
               {categories.map((category) => (
                 <CategoryBtn
                   key={category.id}
-                  handleCategoryProducts={handleCategoryProducts}
                   category={category}
                 />
               ))}
@@ -88,9 +77,15 @@ const ProductsBox = ({}) => {
 
           <div className="">
             <div className=" scrollbar-hide grid grid-flow-row grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 h-[488px] overflow-y-scroll">
-              {boxProducts.map((boxProduct) => (
-                <ProductsBoxItem key={boxProduct.id} boxProduct={boxProduct} />
-              ))}
+              {products
+                .filter(
+                  (product) =>
+                    currentProducts.name === "All" ||
+                    product.category === currentProducts.name
+                )
+                .map((product) => (
+                  <ProductsBoxItem key={product.id} product={product} />
+                ))}
             </div>
           </div>
         </div>

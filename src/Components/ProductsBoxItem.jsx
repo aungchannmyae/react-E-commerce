@@ -3,7 +3,7 @@ import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
 
 const ProductsBoxItem = ({
-  boxProduct: {
+  product: {
     id,
     title,
     description,

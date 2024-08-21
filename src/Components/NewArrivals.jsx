@@ -10,10 +10,7 @@ import NewArrivalSection1 from "./NewArrivalSection1";
 import NewArrivalSection2 from "./NewArrivalSection2";
 
 const NewArrivals = ({}) => {
-  const { products } = useContext(ProductContext);
-  const { categories } = useContext(CategoryContext);
-  const { HandleProductsBox, HandleProductsItemBox } =
-    useContext(GeneralContext);
+
   const { newArrivalProductSection1, newArrivalProductSection2 } =
     useProductsStore();
   return (

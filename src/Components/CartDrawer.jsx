@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import ProductsItemBox from "./ProductsItemBox";
-import CartsProvider, { CartContext } from "../Context/CartsProvider";
 import useGeneralStore from "../store/GeneralStore";
+import useProductsStore from "../store/ProductStore";
 
 const CartDrawer = ({  }) => {
-  const {carts} = useContext(CartContext);
-
   const { cartDrawer, setCartDrawer} = useGeneralStore();
+  const { carts } = useProductsStore();
   return (
     <div className="">
       <div

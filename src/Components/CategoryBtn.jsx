@@ -2,12 +2,11 @@ import React from "react";
 import useCategoriesStore from "../store/CategoryStore";
 import useProductsStore from "../store/ProductStore";
 
-const CategoryBtn = ({ category: { id, name, isActive }, handleCategoryProducts } ) => {
+const CategoryBtn = ({ category: { id, name, isActive } } ) => {
   const { activeCategory } = useCategoriesStore();
   const { filterProduct, products } = useProductsStore();
   const HandleCategoryBtn = () => {
-    activeCategory(id);
-    handleCategoryProducts(name);
+    activeCategory(id);;
   };
 
   return (
