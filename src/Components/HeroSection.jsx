@@ -3,6 +3,7 @@ import Container from "./Container";
 import { Button, Carousel } from "flowbite-react";
 import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
+import { HiShoppingCart } from "react-icons/hi";
 
 const FavoriteSection = ({}) => {
   const HeroProducts = [
@@ -38,7 +39,7 @@ const FavoriteSection = ({}) => {
     },
   ];
 
-  const { productsItemBox, setProductsItemBox} = useGeneralStore();
+  const { productsItemBox, setProductsItemBox } = useGeneralStore();
   const { filterItemBoxProducts } = useProductsStore();
   const handleItemBoxProducts = () => {
     setProductsItemBox();
@@ -46,67 +47,77 @@ const FavoriteSection = ({}) => {
   };
 
   return (
-    <Container>
-      <div className="border border-t-black border-r-0 border-b-black border-l-0  my-1 h-56 sm:h-64 xl:h-80 2xl:h-96">
-        <Carousel
-          // leftControl={
-          //   <svg
-          //     xmlns="http://www.w3.org/2000/svg"
-          //     fill="none"
-          //     viewBox="0 0 24 24"
-          //     strokeWidth={1.5}
-          //     stroke="currentColor"
-          //     className="size-6"
-          //   >
-          //     <path
-          //       strokeLinecap="round"
-          //       strokeLinejoin="round"
-          //       d="M15.75 19.5 8.25 12l7.5-7.5"
-          //     />
-          //   </svg>
-          // }
-          // rightControl={
-          //   <svg
-          //     xmlns="http://www.w3.org/2000/svg"
-          //     fill="none"
-          //     viewBox="0 0 24 24"
-          //     strokeWidth={1.5}
-          //     stroke="currentColor"
-          //     className="size-6"
-          //   >
-          //     <path
-          //       strokeLinecap="round"
-          //       strokeLinejoin="round"
-          //       d="m8.25 4.5 7.5 7.5-7.5 7.5"
-          //     />
-          //   </svg>
-          // }
-          slideInterval={2000}
-          pauseOnHover
-          indicators=""
-        >
-          {HeroProducts.map((heroProduct) => (
-            <div key={heroProduct.id} className="flex h-full items-center justify-center bg-transparent dark:bg-gray-700 dark:text-white">
-              <div className=" flex justify-around items-center">
-                <div className=" w-[500px] flex items-center justify-center">
-                  <img
-                    className=" w-[200px]"
-                    src={heroProduct.image}
-                    alt=""
-                  />
+    <div className="border border-t-black border-r-0 border-b-black border-l-0 py-5 mx-auto w-[1400px] h-[520px]">
+      <div className=" -mb-14">
+        <Container>
+          <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">
+            Our Favorite Products
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6 mx-2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </h1>
+          <p className=" text-lg">Shop our favorite products</p>
+        </Container>
+      </div>
+      <Carousel
+        leftControl
+        rightControl
+        slideInterval={2000}
+        pauseOnHover
+        indicators=""
+      >
+        {HeroProducts.map((heroProduct) => (
+          <div className=" rounded-xl cursor-default flex justify-center items-center mx-auto">
+            <Container>
+              <div className=" gap-8 grid grid-cols-6 h-[360px]">
+                <div className=" shadow-lg rounded-lg flex items-center justify-center col-span-2 bg-white">
+                  <div className="">
+                    <img
+                      className=" w-[200px]"
+                      src={heroProduct.image}
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div className=" w-[500px]">
-                  <p>Our favorite Items</p>
-                  <h1>{heroProduct.title}</h1>
-                  <p>{heroProduct.description}</p>
-                  <Button>Shop Now</Button>
+
+                <div className=" p-3 flex flex-col items-start rounded-lg col-span-4 shadow-lg bg-slate-200">
+                  <h1 className=" my-5 text-3xl h-[60px] font-mono font-bold">
+                    {heroProduct.title}
+                  </h1>
+                  <div className=" h-[200px]">
+                    <p className=" text-xl font-semibold">
+                      {heroProduct.description}
+                    </p>
+                  </div>
+                  <div className=" mt-auto mb-3 px-5 w-full flex flex-row justify-between items-center">
+                    <div className=" flex flex-col gap-1">
+                      <span className=" text-lg">$ {heroProduct.price}</span>
+                      <span>stars</span>
+                    </div>
+                    <button className=" px-3 py-2 rounded-md text-black hover-1 flex items-end justify-center gap-2">
+                      {" "}
+                      <HiShoppingCart className=" h-5 w-5" />
+                      Add To Cart
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Carousel>
-      </div>
-    </Container>
+            </Container>
+          </div>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 
