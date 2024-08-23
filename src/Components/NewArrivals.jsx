@@ -10,11 +10,32 @@ import NewArrivalSection1 from "./NewArrivalSection1";
 import NewArrivalSection2 from "./NewArrivalSection2";
 
 const NewArrivals = ({}) => {
-
   const { newArrivalProductSection1, newArrivalProductSection2 } =
     useProductsStore();
   return (
-    <div id="newArrivals" className=" my-5 m-auto w-[1400px] h-[400px]">
+    <div id="newArrivals" className=" my-5 m-auto w-[1400px] h-[480px] ">
+      <div className=" -mb-7">
+        <Container>
+          <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">
+            New Arrivals Products
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6 mx-2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </h1>
+          <p className=" text-lg">Shop our new arrivals products</p>
+        </Container>
+      </div>
       <Carousel
         leftControl={
           <svg
@@ -23,7 +44,7 @@ const NewArrivals = ({}) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-10 bg-gray-200 p-2 rounded-full active:bg-gray-400 duration-100"
+            className="size-10 bg-slate-200 p-2 rounded-full active:bg-gray-400 duration-100"
           >
             <path
               strokeLinecap="round"
@@ -39,7 +60,7 @@ const NewArrivals = ({}) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-10 bg-gray-200 p-2 rounded-full active:bg-gray-400 duration-100"
+            className="size-10 bg-slate-200 p-2 rounded-full active:bg-gray-400 duration-100"
           >
             <path
               strokeLinecap="round"
@@ -52,16 +73,16 @@ const NewArrivals = ({}) => {
         indicators=""
         slideInterval={10000}
       >
-        <div className=" bg-stone-100 flex justify-center items-center m-auto">
-          <div className=" p-4 gap-20 grid grid-cols-4">
+        <div className=" rounded-xl cursor-default bg-slate-200 flex justify-center mx-auto">
+          <div className=" p-6 gap-8 grid grid-cols-4">
             {newArrivalProductSection1.map((newProduct) => (
               <NewArrivalSection1 key={newProduct.id} newProduct={newProduct} />
             ))}
           </div>
         </div>
 
-        <div className=" bg-stone-100 flex justify-center items-center m-auto">
-          <div className=" p-4 gap-20 grid grid-cols-4">
+        <div className=" rounded-xl cursor-default bg-slate-200 flex justify-center mx-auto">
+          <div className=" p-6 gap-8 grid grid-cols-4">
             {newArrivalProductSection2.map((newProduct) => (
               <NewArrivalSection2
                 key={newProduct.key}

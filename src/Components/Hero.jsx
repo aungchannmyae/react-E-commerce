@@ -3,8 +3,8 @@ import Container from "./Container";
 
 const Hero = () => {
   return (
-    <Container>
-      <div className=" mt-5 rounded-lg h-[450px] bg-slate-300">
+    <div className=" mx-1 mt-5 rounded-lg h-[450px] bg-slate-200">
+      <Container>
         <figure className=" relative">
           <svg
             className=" absolute top-5 right-20"
@@ -383,8 +383,8 @@ const Hero = () => {
             />
           </svg>
         </figure>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 
