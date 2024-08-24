@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import useGeneralStore from "../store/GeneralStore";
 import useCategoriesStore from "../store/CategoryStore";
 import useProductsStore from "../store/ProductStore";
+import ProductsSectionCarousel from "./ProductsSectionCarousel";
 
 const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
   const { setProductsBox } = useGeneralStore();
@@ -18,8 +19,8 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
 
   return (
     <div
-      className={` relative z-20 overflow-hidden w-[200px] duration-700 bg-purple-400 h-[350px] rounded-lg ${
-        isActive ? " duration-700 bg-red-400 w-[570px]" : ""
+      className={` relative z-20 overflow-hidden w-[200px] duration-700 h-[350px] rounded-lg ${
+        isActive ? " duration-700 w-[570px]" : ""
       } `}
     >
       <button
@@ -30,8 +31,10 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
       >
         <div
           className={` ${
-            isActive ? " translate-x-10" : " -translate-x-10 flex flex-row items-center"
-          } w-[140px] flex flex-row items-center duration-500 p-2`}
+            isActive
+              ? " animate-pulse translate-x-10"
+              : " -translate-x-10 flex flex-row items-center"
+          } text-black w-[140px] flex flex-row items-center duration-500 p-2`}
           onClick={openProductsBox}
         >
           <p className=" w-[80px]">See More</p>
@@ -53,7 +56,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
         <span
           className={` ${
             isActive ? " translate-x-10" : " translate-x-0 flex items-center"
-          } duration-500 flex items-center`}
+          } text-black duration-500 flex items-center`}
           onClick={handleProductSection}
         >
           <svg
@@ -72,8 +75,12 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
           </svg>
         </span>
       </button>
-      <div className=" ">
-
+      <div className={` ${!isActive && "pointer-events-none"} h-full carousel carousel-center bg-red-600 w-fit space-x-4 p-0`}>
+        {products
+          .filter((el) => el.category === name)
+          .map((el) => {
+            return <ProductsSectionCarousel key={el.id} image={el.image} />;
+          }).slice(0,4)}
       </div>
     </div>
   );
