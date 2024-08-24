@@ -27,7 +27,7 @@ const NewArrivalSection1 = ({
             alt=""
           />
         </div>
-        <div className=" h-[100px] flex flex-col gap-0">
+        <div className=" text-black h-[100px] flex flex-col gap-0">
           <h1 className=" h-[60px] box-heading-text text-lg font-semibold ">
             {title}
           </h1>

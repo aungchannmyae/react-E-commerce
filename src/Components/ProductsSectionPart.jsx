@@ -18,23 +18,23 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
 
   return (
     <div
-      className={` relative z-20 w-[200px] duration-700 bg-purple-400 h-[350px] rounded-lg ${
+      className={` relative z-20 overflow-hidden w-[200px] duration-700 bg-purple-400 h-[350px] rounded-lg ${
         isActive ? " duration-700 bg-red-400 w-[570px]" : ""
       } `}
     >
       <button
         id="electronics"
         className={` ${
-          !isActive ? " w-[42px]" : " w-[180px]"
-        } h-[42px] absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-slate-200 bg-green-500 active:scale-90 duration-200 hover:text-black flex justify-end border border-black rounded-full uppercase`}
+          !isActive ? " w-[42px]" : " w-[120px]"
+        } z-[99999] h-[42px] absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-slate-200 active:scale-90 duration-200 hover:text-black flex justify-end border border-black rounded-full uppercase`}
       >
         <div
           className={` ${
-            isActive ? " translate-x-0" : " -translate-x-10"
-          } bg-red-500 flex flex-row items-center duration-500 p-2`}
+            isActive ? " translate-x-10" : " -translate-x-10 flex flex-row items-center"
+          } w-[140px] flex flex-row items-center duration-500 p-2`}
           onClick={openProductsBox}
         >
-          <p>See More</p>
+          <p className=" w-[80px]">See More</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -52,8 +52,8 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
         </div>
         <span
           className={` ${
-            isActive ? " translate-x-10" : " translate-x-0 "
-          } duration-500 flex items-center bg-red-500`}
+            isActive ? " translate-x-10" : " translate-x-0 flex items-center"
+          } duration-500 flex items-center`}
           onClick={handleProductSection}
         >
           <svg
@@ -72,6 +72,9 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
           </svg>
         </span>
       </button>
+      <div className=" ">
+
+      </div>
     </div>
   );
 };

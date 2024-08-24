@@ -91,7 +91,7 @@ const FavoriteSection = ({}) => {
                   </div>
                 </div>
 
-                <div className=" p-3 flex flex-col items-start rounded-lg col-span-4 shadow-lg bg-slate-200">
+                <div className=" text-black p-3 flex flex-col items-start rounded-lg col-span-4 shadow-lg bg-slate-200">
                   <h1 className=" my-5 text-3xl h-[60px] font-mono font-bold">
                     {heroProduct.title}
                   </h1>
