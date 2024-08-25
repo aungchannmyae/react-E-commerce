@@ -9,10 +9,10 @@ const ProductsSection = ({}) => {
   const { setProductsBox } = useGeneralStore();
 
   return (
-    <div className=" my-2 mx-[150px] bg-red-600 py-2 rounded-lg">
+    <div className=" select-none my-5 mx-[150px] shadow-2xl bg-gradient-to-b from-slate-200 from-30% via-gray-300 via-90% to-gray-400 p-4 rounded-lg">
       <Container>
         <div className=" relative">
-          <div className=" rounded-lg bg-red-600 flex gap-[10px] w-full">
+          <div className=" rounded-lg flex gap-4 w-full">
             {productSection.map((product)=>
               <ProductsSectionPart key={product.id} product={product}/>
             )}

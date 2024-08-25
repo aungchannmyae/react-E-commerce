@@ -48,7 +48,7 @@ const FavoriteSection = ({}) => {
 
   return (
     <div className="border border-t-black border-r-0 border-b-black border-l-0 py-5 mx-auto w-[1400px] h-[520px]">
-      <div className=" -mb-14">
+      <div className=" -mb-10">
         <Container>
           <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">
             Our Favorite Products
@@ -67,7 +67,7 @@ const FavoriteSection = ({}) => {
               />
             </svg>
           </h1>
-          <p className=" text-lg">Shop our favorite products</p>
+          <p className=" text-lg">Handpicked for You – Explore our best-selling items</p>
         </Container>
       </div>
       <Carousel

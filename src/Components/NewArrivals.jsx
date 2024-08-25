@@ -33,7 +33,7 @@ const NewArrivals = ({}) => {
               />
             </svg>
           </h1>
-          <p className=" text-lg">Shop our new arrivals products</p>
+          <p className=" text-lg">Handpicked for You – Explore our latest arrivals</p>
         </Container>
       </div>
       <Carousel
