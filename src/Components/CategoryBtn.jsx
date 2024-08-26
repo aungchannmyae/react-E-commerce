@@ -14,7 +14,7 @@ const CategoryBtn = ({ category: { id, name, isActive } } ) => {
       onClick={HandleCategoryBtn}
       key={id}
       className={` ${
-        isActive ? " bg-cyan-500" : " bg-white"
+        isActive ? " bg-red-600" : " bg-white"
       } px-2 active:scale-90 duration-300 text-nowrap border border-black rounded-lg`}
     >
       {name}

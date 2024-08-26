@@ -27,14 +27,14 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
         id="electronics"
         className={` ${
           !isActive ? " w-[42px]" : " w-[125px]"
-        } z-[99999] h-[42px] shadow-2xl absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-slate-200 bg-white active:scale-90 duration-200 hover:text-black flex justify-end rounded-bl-3xl uppercase`}
+        } z-[99999] h-[42px] shadow-2xl bg-red-600 absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-red-400 active:scale-90 duration-200 hover:text-black flex justify-end rounded-bl-3xl uppercase`}
       >
         <div
           className={` ${
             isActive
               ? " animate-pulse translate-x-10"
               : " -translate-x-10 flex flex-row items-center"
-          } text-red-600 font-semibold w-[140px] flex flex-row items-center duration-1000 p-2`}
+          } text-black font-semibold w-[140px] flex flex-row items-center duration-1000 p-2`}
           onClick={openProductsBox}
         >
           <p className=" w-[80px]">See More</p>
@@ -59,7 +59,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
         <span
           className={` ${
             isActive ? " translate-x-10" : " translate-x-0 flex items-center"
-          } text-red-600 duration-1000 flex items-center`}
+          } text-black duration-1000 flex items-center`}
           onClick={handleProductSection}
         >
           <svg
@@ -91,8 +91,8 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
           .slice(0, 4)}
       </div>
       <div> 
-        <div className={` ${ isActive ? " translate-y-0 duration-1000" : " -translate-y-20"} bg-white shadow-xl py-2 rounded-br-3xl rounded-tl-lg px-5 text-nowrap absolute top-0 left-0`}>
-          <p>Choose your category.</p>
+        <div className={` ${ isActive ? " translate-y-0 duration-1000" : " -translate-y-20"} uppercase bg-red-600 text-black shadow-xl py-1.5 rounded-br-3xl rounded-tl-lg px-5 text-nowrap absolute top-0 left-0`}>
+          <p><span className=" font-semibold text-lg italic">{name}</span> Collections</p>
         </div>
       </div>
     </div>

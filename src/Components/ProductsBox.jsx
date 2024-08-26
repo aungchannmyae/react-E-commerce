@@ -26,7 +26,7 @@ const ProductsBox = ({}) => {
       >
         <div className=" w-full">
           <div className=" grid grid-cols-11 gap-4">
-            <div className=" col-span-3 search-bar rounded-lg px-5 bg-slate-200 flex items-center">
+            <div className=" *:cursor-not-allowed col-span-3 search-bar rounded-lg px-5 bg-slate-200 flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
