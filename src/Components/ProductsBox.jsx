@@ -94,7 +94,7 @@ const ProductsBox = ({}) => {
         onClick={setProductsBox}
         className={`${
           productsBox &&
-          " translate-y-0 opacity-100 fixed top-0 left-0 bg-slate-100 bg-opacity-75 w-[1519px] h-screen z-[999997]"
+          " translate-y-0 backdrop-blur-sm opacity-100 fixed top-0 left-0 bg-slate-100 bg-opacity-75 w-[1519px] h-screen z-[999997]"
         } opacity-0 -translate-y-full duration-300`}
       ></div>
     </div>

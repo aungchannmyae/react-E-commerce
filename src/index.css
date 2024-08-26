@@ -19,6 +19,12 @@ html::-webkit-scrollbar {
         color: #fff;
 }
 
+.hover-2:active {
+        --p: 100%;
+        color: #fff;
+}
+
+
 .box-heading-text {
     overflow: hidden;
     display: -webkit-box;

@@ -11,7 +11,7 @@ const CartDrawer = ({  }) => {
       <div
         className={` ${
           cartDrawer && " translate-x-[px] "
-        } p-5 duration-700 translate-x-[500px] z-[999999999] fixed top-6 right-5 bg-slate-400 bg-opacity-60 h-[650px] w-[400px] rounded-2xl`}
+        } backdrop-blur-sm p-5 duration-700 translate-x-[500px] z-[999999999] fixed top-6 right-5 bg-slate-400 bg-opacity-60 h-[650px] w-[400px] rounded-2xl`}
       >
         <div className=" flex flex-col h-full">
           <div className=" flex justify-between items-center p-1">

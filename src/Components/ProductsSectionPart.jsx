@@ -27,7 +27,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
         id="electronics"
         className={` ${
           !isActive ? " w-[42px]" : " w-[125px]"
-        } z-[99999] h-[42px] shadow-2xl bg-red-600 absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-red-400 active:scale-90 duration-200 hover:text-black flex justify-end rounded-bl-3xl uppercase`}
+        } z-[99999] h-[42px] shadow-2xl bg-red-600 absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-red-400 active:scale-90 hover:text-black flex justify-end rounded-bl-3xl uppercase`}
       >
         <div
           className={` ${
@@ -42,7 +42,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="size-5 ml-2"
+            className=" animate-ping size-5 ml-2"
           >
             <path
               fillRule="evenodd"
@@ -68,7 +68,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-10 p-2 animate-pulse "
+            className="size-10 p-2 animate-ping duration-1000 "
           >
             <path
               strokeLinecap="round"
