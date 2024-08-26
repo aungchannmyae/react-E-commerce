@@ -39,39 +39,39 @@ const NavBar = ({  }) => {
                 href="#newArrivals"
                 className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
-                Home
+                Latest Arrivals
               </a>
             </div>
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
-                href=""
+                href="#favorite"
                 className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
-                Home
+                Favorite
               </a>
             </div>
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
-                href=""
+                href="#categories"
                 className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
-                Home
+                Categories
               </a>
             </div>
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
-                href=""
+                href="commercial"
                 className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
-                Home
+                Commercial
               </a>
             </div>
             <div className="  justify-center items-center flex">
               <a
-                href=""
+                href="#aboutUs"
                 className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
-                Home
+                About Us
               </a>
             </div>
           </div>

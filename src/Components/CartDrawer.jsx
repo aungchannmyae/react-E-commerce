@@ -78,9 +78,9 @@ const CartDrawer = ({  }) => {
                       />
                     </svg>
                   </button>
-                  <p className=" mt-12">Lorem ipsum dolor sit amet.</p>
+                  <p className=" mt-12"></p>
                   <div className=" flex justify-between items-center">
-                    <p>$0.00</p>
+                    <p></p>
                     <p className=" flex">
                       <button className="active:scale-75 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 duration-300 bg-gray-300 rounded flex items-center justify-center w-6">
                         <svg

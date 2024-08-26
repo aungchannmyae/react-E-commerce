@@ -8,11 +8,14 @@ const NewArrivalSection1 = ({
   newProduct: { id, title, image, price , description },
 }) => {
   const { setProductsItemBox } = useGeneralStore();
-  const { filterItemBoxProducts } = useProductsStore();
+  const { filterItemBoxProducts, setCart } = useProductsStore();
   const handleItemBoxProducts = () => {
     setProductsItemBox();
     filterItemBoxProducts(id);
   };
+  const handleCartProducts = () => {
+    setCart(newProduct, price);
+  }
   return (
     <div
       onClick={handleItemBoxProducts}
@@ -33,7 +36,7 @@ const NewArrivalSection1 = ({
           </h1>
           <span className="">$ {price}</span>
         </div>
-        <div className=" text-red-600 flex flex-row items-end justify-start gap-2">
+        <div onClick={handleCartProducts} className=" text-red-600 flex flex-row items-end justify-start gap-2">
             <HiShoppingCart className=" h-5 w-5" />
             Add To Cart
         </div>

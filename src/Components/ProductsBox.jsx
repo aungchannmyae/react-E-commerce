@@ -16,7 +16,7 @@ const ProductsBox = ({}) => {
   const { products, boxProducts, setBoxProducts } = useProductsStore();
 
   const currentProducts = categories.find((el) => el.isActive === true);
-  console.log(currentProducts);
+
   return (
     <div>
       <div

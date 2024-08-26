@@ -1,13 +1,22 @@
 import React from "react";
 import Container from "./Container";
+import useGeneralStore from "../store/GeneralStore";
 
 const Hero = () => {
+  const {setProductsBox} = useGeneralStore();
   return (
-    <div className=" mx-1 mt-5 rounded-lg h-[450px] bg-slate-200">
+    <div className=" mx-1 mt-5 rounded-lg bg-slate-200">
       <Container>
-        <figure className=" relative">
+        <section className=" h-full grid grid-cols-2 gap-5 py-5">
+          <div className=" flex flex-col justify-center items-start ml-10 ">
+            <h1 className="mb-10 text-4xl text-red-600  font-bold">Discover Premium Quality Products at Unbeatable Prices!</h1>
+            <p className=" mb-5 text-2xl text-black font-semibold">Shop the latest trends in fashion, electronics, and home essentials.</p>
+            <div>
+              <p onClick={setProductsBox} className=" cursor-pointer font-medium active:scale-105 duration-200 bg-red-600 py-2 px-4">Shop now</p>
+            </div>
+          </div>
           <svg
-            className=" absolute top-5 right-20"
+            className=""
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
             width="500"
@@ -382,7 +391,7 @@ const Hero = () => {
               fill="#3f3d56"
             />
           </svg>
-        </figure>
+        </section>
       </Container>
     </div>
   );
