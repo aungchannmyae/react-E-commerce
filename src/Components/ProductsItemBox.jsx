@@ -13,19 +13,16 @@ const ProductsItemBox = ({}) => {
           productsItemBox && " translate-y-32 opacity-100 "
         } z-[999999998] backdrop-blur-sm shadow-2xl opacity-0 -translate-y-full duration-500 h-[500px] w-[800px] fixed bottom-56 right-[350px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 `}
       >
-        <div className=" overflow-hidden grid grid-cols-3 gap-3 bg-white rounded-lg h-full ">
-          {itemBoxProducts.map((itemBoxProduct) => (
+        {itemBoxProducts.map((itemBoxProduct) => (
+          <div className=" overflow-hidden grid grid-cols-3 gap-3 bg-white rounded-lg h-full ">
             <div className=" overflow-hidden col-span-2 flex gap-2 p-3">
               <div className=" w-1/2 bg pt-10 flex flex-col items-center gap-5 ">
-                <img
-                  className=" w-3/5 "
-                  src={itemBoxProduct.image}
-                  alt=""
-                />
+                <img className=" w-3/5 " src={itemBoxProduct.image} alt="" />
                 <div className=" w-full flex flex-col justify-start gap-2">
                   <h1 className=" text-xl font-mono">Sale Price</h1>
-                  <p className=" text-red-600 font-bold text-[50px]">$ {itemBoxProduct.price}</p>
-                  <span>stars</span>
+                  <p className=" text-red-600 font-bold text-[50px]">
+                    $ {itemBoxProduct.price}
+                  </p>
                 </div>
               </div>
               <div className=" w-1/2 pt-10 h-full">
@@ -41,11 +38,39 @@ const ProductsItemBox = ({}) => {
                 </div>
               </div>
             </div>
-          ))}
-          <div className=" col-span-1 bg-slate-200 my-3 mr-3 rounded-lg shadow-xl">
-
+            <div className=" col-span-1 flex flex-col bg-slate-200 my-3 mr-3 p-2 rounded-lg shadow-xl overflow-hidden">
+              <div className=" flex items-center justify-between">
+                <p className=" text-sm">Ratings and Reviews</p>
+                <span className=" cursor-pointer font-medium">Overview</span>
+              </div>
+              <div className=" h-[100px] ">
+                <h1 className=" text-[40px]">{itemBoxProduct.rating.rate}</h1>
+                <span>stars</span>
+              </div>
+              <div>
+                <div className=" bg-slate-300 p-1 rounded overflow-hidden mx-1">
+                  <h1 className=" text-lg text-nowrap">
+                    Alexandre Volkanoviski
+                  </h1>
+                  <span>stars</span>
+                  <p className=" line-clamp-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestiae, impedit.
+                  </p>
+                  <p className=" mt-2 text-xs">Was this review helpful?</p>
+                </div>
+              </div>
+              <div className=" mt-auto">
+                <h1 className=" text-lg font-semibold ">Rate this product</h1>
+                <p className=" text-xs">Tell others what you think</p>
+                <span>stars</span>
+                <div className=" ">
+                  <p className="cursor-pointer font-medium text-red-600 duration-200 active:bg-slate-400 inline-block py-1 px-1 rounded-full -ml-1">Write a review</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
 
       <div
