@@ -305,18 +305,38 @@ const useProductsStore = create((set) => ({
       rating: { rate: 3.6, count: 145 },
     },
   ],
-  carts: [
-
-  ],
-  setCart: (appendProduct, price) => 
-    set((state)=> ({
-      carts: [ ...state.carts, { 
-        id: state.carts.length + 1, // Generate a new ID based on the length of the cart
-        product: appendProduct, // Add the new product
-        quantity: 1, // Set the initial quantity to 1
-        cost: price, // Set the cost of the product
-      } ]
-    }))
+  carts: [],
+  setCart: (appendProduct, price) =>
+    set((state) => ({
+      carts: [
+        ...state.carts,
+        {
+          id: state.carts.length + 1, // Generate a new ID based on the length of the cart
+          product: appendProduct, // Add the new product
+          quantity: 1, // Set the initial quantity to 1
+          cost: price, // Set the cost of the product
+        },
+      ],
+    })),
+  addCartQuantity: (productId) =>
+    set((state) => ({
+      carts: state.carts.map((item) =>
+        item.product.id === productId
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ),
+    })),
+  subCartQuantity: (productId) =>
+    set((state) => ({
+      carts: state.carts.map((item) =>
+        item.product.id === productId && item.quantity > 1
+          ? {
+              ...item,
+              quantity: item.quantity - 1,
+            }
+          : item
+      ),
+    })),
 }));
 
 export default useProductsStore;

@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Container from "./Container";
 import { Button, Carousel } from "flowbite-react";
 import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
 import { HiShoppingCart } from "react-icons/hi";
+import HeroSectionItem from "./HeroSectionItem";
 
 const FavoriteSection = ({}) => {
   const HeroProducts = [
@@ -18,7 +19,7 @@ const FavoriteSection = ({}) => {
       rating: { rate: 3.9, count: 120 },
     },
     {
-      id: 2,
+      id: 6,
       title: "Solid Gold Petite Micropave ",
       price: 168,
       description:
@@ -28,7 +29,7 @@ const FavoriteSection = ({}) => {
       rating: { rate: 3.9, count: 70 },
     },
     {
-      id: 3,
+      id: 13,
       title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
       price: 599,
       description:
@@ -41,14 +42,11 @@ const FavoriteSection = ({}) => {
 
   const { productsItemBox, setProductsItemBox } = useGeneralStore();
   const { filterItemBoxProducts } = useProductsStore();
-  const handleItemBoxProducts = () => {
-    setProductsItemBox();
-    filterItemBoxProducts(id);
-  };
+
 
   return (
     <div id="favorite" className="border border-t-black border-r-0 border-b-black border-l-0 py-5 mx-auto w-[1400px] h-[520px]">
-      <div className=" -mb-10">
+      <div className=" mb-5">
         <Container>
           <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">
             Our Favorite Products
@@ -78,43 +76,7 @@ const FavoriteSection = ({}) => {
         indicators=""
       >
         {HeroProducts.map((heroProduct) => (
-          <div className=" rounded-xl cursor-default flex justify-center items-center mx-auto">
-            <Container>
-              <div className=" gap-8 grid grid-cols-6 h-[360px]">
-                <div className=" shadow-lg rounded-lg flex items-center justify-center col-span-2 bg-white">
-                  <div className="">
-                    <img
-                      className=" w-[200px]"
-                      src={heroProduct.image}
-                      alt=""
-                    />
-                  </div>
-                </div>
-
-                <div className=" text-black p-3 flex flex-col items-start rounded-lg col-span-4 shadow-lg bg-slate-200">
-                  <h1 className=" my-5 text-3xl h-[60px] font-mono font-bold">
-                    {heroProduct.title}
-                  </h1>
-                  <div className=" h-[200px]">
-                    <p className=" text-xl font-semibold">
-                      {heroProduct.description}
-                    </p>
-                  </div>
-                  <div className=" mt-auto mb-3 px-5 w-full flex flex-row justify-between items-center">
-                    <div className=" flex flex-col gap-1">
-                      <span className=" text-lg">$ {heroProduct.price}</span>
-                      <span>stars</span>
-                    </div>
-                    <button className=" px-3 py-2 rounded-md text-black hover-1 flex items-end justify-center gap-2">
-                      {" "}
-                      <HiShoppingCart className=" h-5 w-5" />
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Container>
-          </div>
+          <HeroSectionItem key={heroProduct.id} heroProduct={heroProduct} />
         ))}
       </Carousel>
     </div>

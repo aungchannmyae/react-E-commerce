@@ -3,9 +3,10 @@ import ProductsItemBox from "./ProductsItemBox";
 import useGeneralStore from "../store/GeneralStore";
 import useProductsStore from "../store/ProductStore";
 
-const CartDrawer = ({  }) => {
-  const { cartDrawer, setCartDrawer} = useGeneralStore();
-  const { carts } = useProductsStore();
+const CartDrawer = ({}) => {
+  const { cartDrawer, setCartDrawer } = useGeneralStore();
+  const { carts, addCartQuantity, subCartQuantity } = useProductsStore();
+
   return (
     <div className="">
       <div
@@ -56,10 +57,13 @@ const CartDrawer = ({  }) => {
           <div className=" h-[450px] my-3 p-1 ">
             <div className=" scrollbar-hide flex flex-col gap-2 bg-white rounded-lg h-full overflow-x-hidden overflow-y-auto">
               {carts.map((cart) => (
-                <div key={cart.id} className=" group mx-4 my-6 p-2 flex flex-col rounded-md border border-black relative">
+                <div
+                  key={cart.id}
+                  className=" group mx-4 my-6 p-2 flex flex-col rounded-md border border-black relative"
+                >
                   <img
                     className=" absolute -top-6 left-6 w-[50px]"
-                    src={cart.product.image}
+                    
                     alt=""
                   />
                   <button className=" rounded-tr-md absolute top-0 right-0 opacity-0 group-hover:opacity-100 duration-200 bg-red-700 text-white">
@@ -82,7 +86,12 @@ const CartDrawer = ({  }) => {
                   <div className=" flex justify-between items-center">
                     <p></p>
                     <p className=" flex">
-                      <button className="active:scale-75 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 duration-300 bg-gray-300 rounded flex items-center justify-center w-6">
+                      <button
+                        onClick={() => {
+                          addCartQuantity(cart.product.id)
+                        }}
+                        className="active:scale-75 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 duration-300 bg-gray-300 rounded flex items-center justify-center w-6"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -98,8 +107,12 @@ const CartDrawer = ({  }) => {
                           />
                         </svg>
                       </button>
-                      <span className=" w-5 inline-block">1</span>
-                      <button className="active:scale-75 opacity-0 group-hover:opacity-100 translate-x-10 group-hover:translate-x-0 duration-300 bg-gray-300 rounded flex items-center justify-center w-6">
+                      <span className=" px-1 inline-block">
+                        {cart.quantity}
+                      </span>
+                      <button onClick={() => {
+                        subCartQuantity(cart.product.id)
+                      }} className="active:scale-75 opacity-0 group-hover:opacity-100 translate-x-10 group-hover:translate-x-0 duration-300 bg-gray-300 rounded flex items-center justify-center w-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -126,7 +139,7 @@ const CartDrawer = ({  }) => {
               <h1>Total</h1>
               <span>$0.00</span>
             </div>
-            <button className=" w-full py-2 flex justify-center items-center bg-cyan-500 rounded-lg">
+            <button className=" w-full py-2 flex justify-center items-center bg-red-600 rounded-lg">
               Buy
             </button>
           </div>

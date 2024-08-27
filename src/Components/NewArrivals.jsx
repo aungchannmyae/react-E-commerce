@@ -33,7 +33,9 @@ const NewArrivals = ({}) => {
               />
             </svg>
           </h1>
-          <p className=" text-lg">Handpicked for You – Explore our latest arrivals</p>
+          <p className=" text-lg">
+            Handpicked for You – Explore our latest arrivals
+          </p>
         </Container>
       </div>
       <Carousel
@@ -85,7 +87,7 @@ const NewArrivals = ({}) => {
           <div className=" p-6 gap-8 grid grid-cols-4">
             {newArrivalProductSection2.map((newProduct) => (
               <NewArrivalSection2
-                key={newProduct.key}
+                key={newProduct.id}
                 newProduct={newProduct}
               />
             ))}
