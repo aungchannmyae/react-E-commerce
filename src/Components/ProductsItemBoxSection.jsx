@@ -3,12 +3,14 @@ import { HiShoppingCart } from "react-icons/hi";
 import useProductsStore from "../store/ProductStore";
 
 const ProductsItemBoxSection = ({ itemBoxProduct }) => {
-  const { carts, setCart } = useProductsStore();
-  const [inCart, setInCart] = useState(false);
+  const { products, carts, setCart } = useProductsStore();
   const handleCartProducts = () => {
     setCart(itemBoxProduct, itemBoxProduct.price);
-    const productInCart = carts.map((cart)=> cart.product.id === itemBoxProduct.id);
-    setInCart(productInCart);
+    // const productInCart = carts.map((cart)=> cart.product.id === itemBoxProduct.id);
+    // if(productInCart){
+    //   setInCart(productInCart);
+    // }
+    // setInCart(itemBoxProduct.id);
   };
 
   return (
@@ -30,14 +32,23 @@ const ProductsItemBoxSection = ({ itemBoxProduct }) => {
           <p className=" h-[200px] overflow-y-scroll text-center mb-5 text-pretty text-sm scrollbar-hide">
             {itemBoxProduct.description}
           </p>
-          <button
-            disabled={inCart}
-            onClick={handleCartProducts}
-            className={` disabled:scale-100 disabled:after:content-['Added'] disabled:pointer-events-none after:content-['Add_to_Cart'] w-full select-none cursor-pointer flex flex-row items-center justify-center font-semibold hover-2 active:scale-105 duration-100 bg-red-600 gap-2 py-2 px-3 rounded-lg`}
-          >
-            <HiShoppingCart className=" h-5 w-5" />
-            
-          </button>
+          {carts.find((cart) => cart.product.id === itemBoxProduct.id) ? (
+            <button
+              disabled={true}
+              onClick={handleCartProducts}
+              className={` disabled:scale-100 disabled:after:content-['Added'] disabled:pointer-events-none after:content-['Add_to_Cart'] w-full select-none cursor-pointer flex flex-row items-center justify-center font-semibold hover-2 active:scale-105 duration-100 bg-red-600 gap-2 py-2 px-3 rounded-lg`}
+            >
+              <HiShoppingCart className=" h-5 w-5" />
+            </button>
+          ) : (
+            <button
+              disabled={false}
+              onClick={handleCartProducts}
+              className={` disabled:scale-100 disabled:after:content-['Added'] disabled:pointer-events-none after:content-['Add_to_Cart'] w-full select-none cursor-pointer flex flex-row items-center justify-center font-semibold hover-2 active:scale-105 duration-100 bg-red-600 gap-2 py-2 px-3 rounded-lg`}
+            >
+              <HiShoppingCart className=" h-5 w-5" />
+            </button>
+          )}
         </div>
       </div>
       <div className=" col-span-1 flex flex-col bg-slate-200 my-3 mr-3 p-2 rounded-lg shadow-xl overflow-hidden">

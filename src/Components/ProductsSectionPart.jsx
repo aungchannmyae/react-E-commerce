@@ -27,7 +27,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
         id="electronics"
         className={` ${
           !isActive ? " w-[42px]" : " w-[125px]"
-        } z-[99999] h-[42px] shadow-2xl bg-red-600 absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-red-400 active:scale-90 hover:text-black flex justify-end rounded-bl-3xl uppercase`}
+        } z-[99999] h-[42px] duration-500 shadow-2xl bg-red-600 absolute top-0 right-0 pointer-events-auto group overflow-hidden hover:bg-red-400 active:scale-90 hover:text-black flex justify-end rounded-bl-3xl uppercase`}
       >
         <div
           className={` ${

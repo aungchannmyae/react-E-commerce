@@ -1,3 +1,4 @@
+import { flushSync } from "react-dom";
 import { create } from "zustand";
 
 const useProductsStore = create((set) => ({
@@ -318,11 +319,19 @@ const useProductsStore = create((set) => ({
         },
       ],
     })),
+    // setInCart: (productId) =>
+    //   set((state) => ({
+    //     carts: state.carts.map((item) =>
+    //       item.product.id === productId
+    //         ? { ...state.products, products: state.products.map((el)=> {el, inCart: true}) }
+    //         : { ...state.products, products: state.products.map((el)=> {el, inCart: false}) }
+    //     )
+    //   })),
   addCartQuantity: (productId) =>
     set((state) => ({
       carts: state.carts.map((item) =>
         item.product.id === productId
-          ? { ...item, quantity: item.quantity + 1 }
+          ? { ...item, quantity: item.quantity + 1, cost: item.cost + item.product.price }
           : item
       ),
     })),
@@ -332,10 +341,14 @@ const useProductsStore = create((set) => ({
         item.product.id === productId && item.quantity > 1
           ? {
               ...item,
-              quantity: item.quantity - 1,
+              quantity: item.quantity - 1, cost: item.cost - item.product.price
             }
           : item
       ),
+    })),
+  deleteCartItem: (productId) =>
+    set((state) => ({
+      carts: state.carts.filter((item) => item.product.id !== productId),
     })),
 }));
 
