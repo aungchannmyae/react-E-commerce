@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
+import Rating from "./Rating";
 
 const ProductsBoxItem = ({
   product: {
@@ -37,7 +38,7 @@ const ProductsBoxItem = ({
         <h1 className=" line-clamp-2 font-mono h-12">{title}</h1>
         <div className=" flex flex-col ">
           <p className=" italic">$ {price}</p>
-          <span className="">rating star</span>
+          <Rating rate={rate}/>
         </div>
       </div>
     </div>

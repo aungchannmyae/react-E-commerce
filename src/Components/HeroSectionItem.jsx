@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import useProductsStore from "../store/ProductStore";
 import Container from "./Container";
+import Rating from "./Rating";
 
 const HeroSectionItem = ({ heroProduct }) => {
   const { carts, setCart } = useProductsStore();
@@ -33,7 +34,7 @@ const HeroSectionItem = ({ heroProduct }) => {
             <div className=" mt-auto mb-3 px-5 w-full flex flex-row justify-between items-center">
               <div className=" flex flex-col gap-1">
                 <span className=" text-lg">$ {heroProduct.price}</span>
-                <span>stars</span>
+                <Rating rate={heroProduct.rating.rate} />
               </div>
               {carts.find((cart) => cart.product.id === heroProduct.id) ? (
                 <button

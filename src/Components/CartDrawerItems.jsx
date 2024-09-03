@@ -20,6 +20,24 @@ const CartDrawerItems = ({ cart }) => {
         <p className=" flex">
           <button
             onClick={() => {
+              subCartQuantity(cart.product.id);
+            }}
+            className="active:scale-75 duration-300 hover:bg-gray-300 rounded flex items-center justify-center w-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-4"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
+            </svg>
+          </button>
+          <span className=" px-1 inline-block">{cart.quantity}</span>
+          <button
+            onClick={() => {
               addCartQuantity(cart.product.id);
             }}
             className="active:scale-75 duration-300 hover:bg-gray-300 rounded flex items-center justify-center w-6"
@@ -37,24 +55,6 @@ const CartDrawerItems = ({ cart }) => {
                 strokeLinejoin="round"
                 d="M12 4.5v15m7.5-7.5h-15"
               />
-            </svg>
-          </button>
-          <span className=" px-1 inline-block">{cart.quantity}</span>
-          <button
-            onClick={() => {
-              subCartQuantity(cart.product.id);
-            }}
-            className="active:scale-75 duration-300 hover:bg-gray-300 rounded flex items-center justify-center w-6"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
             </svg>
           </button>
         </p>
@@ -81,7 +81,6 @@ const CartDrawerItems = ({ cart }) => {
           />
         </svg>
       </button>
-      
     </div>
   );
 };

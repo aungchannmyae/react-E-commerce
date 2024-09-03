@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className=" mx-1 mt-5 rounded-lg bg-slate-200">
       <Container>
-        <section className=" h-full grid grid-cols-2 gap-5 py-5">
+        <section className=" select-none h-full grid grid-cols-2 gap-5 py-5">
           <div className=" flex flex-col justify-center items-start ml-10 ">
             <h1 className="mb-10 text-4xl text-red-600  font-bold">Discover Premium Quality Products at Unbeatable Prices!</h1>
             <p className=" mb-5 text-2xl text-black font-semibold">Shop the latest trends in fashion, electronics, and home essentials.</p>

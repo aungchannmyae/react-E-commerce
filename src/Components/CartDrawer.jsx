@@ -499,7 +499,7 @@ const CartDrawer = ({}) => {
           <div className=" mt-auto p-1">
             <div className=" flex justify-between items-center">
               <h1>Total (Taxed)</h1>
-              <span>{total.toFixed(2)}</span>
+              <span>$ {total.toFixed(2)}</span>
             </div>
             <button className=" w-full py-2 flex justify-center items-center bg-red-600 rounded-lg">
               Buy

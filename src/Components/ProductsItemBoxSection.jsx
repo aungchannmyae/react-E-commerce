@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import useProductsStore from "../store/ProductStore";
+import Rating from "./Rating";
 
 const ProductsItemBoxSection = ({ itemBoxProduct }) => {
   const { products, carts, setCart } = useProductsStore();
@@ -23,6 +24,7 @@ const ProductsItemBoxSection = ({ itemBoxProduct }) => {
             <p className=" text-red-600 font-bold text-[50px]">
               $ {itemBoxProduct.price}
             </p>
+            <Rating rate={itemBoxProduct.rating.rate}/>
           </div>
         </div>
         <div className=" w-1/2 pt-10 h-full">
@@ -58,15 +60,14 @@ const ProductsItemBoxSection = ({ itemBoxProduct }) => {
         </div>
         <div className=" h-[100px] ">
           <h1 className=" text-[40px]">{itemBoxProduct.rating.rate}</h1>
-          <span>stars</span>
+          <Rating rate={4.7}/>
         </div>
         <div>
           <div className=" bg-slate-300 p-1 rounded overflow-hidden mx-1">
             <h1 className=" text-lg text-nowrap">Alexandre Volkanoviski</h1>
-            <span>stars</span>
+            <Rating rate={5}/>
             <p className=" line-clamp-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae, impedit.
+              Really good. Very nice. Holy great. Bloody good. God dam nice.
             </p>
             <p className=" mt-2 text-xs">Was this review helpful?</p>
           </div>
@@ -74,7 +75,7 @@ const ProductsItemBoxSection = ({ itemBoxProduct }) => {
         <div className=" mt-auto">
           <h1 className=" text-lg font-semibold ">Rate this product</h1>
           <p className=" text-xs">Tell others what you think</p>
-          <span>stars</span>
+          <Rating rate={0}/>
           <div className=" ">
             <p className="cursor-pointer font-medium text-red-600 duration-200 active:bg-slate-400 inline-block py-1 px-1 rounded-full -ml-1">
               Write a review

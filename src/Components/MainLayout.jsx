@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
 import Commercial from "./Commercial";
+import Footer from "./Footer";
 
 const MainLayout = () => {
   const { cartDrawer, setCartDrawer } = useGeneralStore();
@@ -35,6 +36,7 @@ const MainLayout = () => {
         <CartDrawer></CartDrawer>
         <ProductsItemBox></ProductsItemBox>
         <Commercial/>
+        <Footer/>
       </main>
     </>
   );
