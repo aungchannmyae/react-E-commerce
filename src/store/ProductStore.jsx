@@ -319,14 +319,7 @@ const useProductsStore = create((set) => ({
         },
       ],
     })),
-    // setInCart: (productId) =>
-    //   set((state) => ({
-    //     carts: state.carts.map((item) =>
-    //       item.product.id === productId
-    //         ? { ...state.products, products: state.products.map((el)=> {el, inCart: true}) }
-    //         : { ...state.products, products: state.products.map((el)=> {el, inCart: false}) }
-    //     )
-    //   })),
+
   addCartQuantity: (productId) =>
     set((state) => ({
       carts: state.carts.map((item) =>

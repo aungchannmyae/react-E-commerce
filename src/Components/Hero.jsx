@@ -12,7 +12,7 @@ const Hero = () => {
             <h1 className="mb-10 text-4xl text-red-600  font-bold">Discover Premium Quality Products at Unbeatable Prices!</h1>
             <p className=" mb-5 text-2xl text-black font-semibold">Shop the latest trends in fashion, electronics, and home essentials.</p>
             <div>
-              <p onClick={setProductsBox} className=" cursor-pointer font-medium active:scale-105 duration-200 bg-red-600 py-2 px-4">Shop now</p>
+              <button onClick={setProductsBox} className=" cursor-pointer font-medium active:scale-105 duration-200 bg-red-600 py-2 px-4">Shop now</button>
             </div>
           </div>
           <svg

@@ -1,21 +1,18 @@
-
 import { HiShoppingCart } from "react-icons/hi";
 import React, { useContext } from "react";
 import useProductsStore from "../store/ProductStore";
 import useGeneralStore from "../store/GeneralStore";
 
-const NewArrivalSection1 = ({
-  newProduct
-}) => {
+const NewArrivalSection1 = ({ newProduct }) => {
   const { setProductsItemBox } = useGeneralStore();
-  const { filterItemBoxProducts, setCart } = useProductsStore();
+  const { filterItemBoxProducts, setCart, carts } = useProductsStore();
   const handleItemBoxProducts = () => {
     setProductsItemBox();
     filterItemBoxProducts(newProduct.id);
   };
   const handleCartProducts = () => {
-    setCart(newProduct , newProduct.price);
-  }
+    setCart(newProduct, newProduct.price);
+  };
   return (
     <div
       onClick={handleItemBoxProducts}
@@ -36,9 +33,28 @@ const NewArrivalSection1 = ({
           </h1>
           <span className="">$ {newProduct.price}</span>
         </div>
-        <div onClick={handleCartProducts} className=" text-red-600 flex flex-row items-end justify-start gap-2">
-            <HiShoppingCart className=" h-5 w-5" />
-            Add To Cart
+        <div>
+          {carts.find((cart) =>
+            cart.product.id === newProduct.id) ? (
+              <button
+              disabled={true}
+                onClick={handleCartProducts}
+                className=" duration-300 text-red-600 flex flex-row items-end justify-start gap-2"
+              >
+                <HiShoppingCart className=" h-5 w-5" />
+                Added
+              </button>
+            ) : (
+              <button
+              disabled={false}
+                onClick={handleCartProducts}
+                className=" duration-300 text-red-600 flex flex-row items-end justify-start gap-2"
+              >
+                <HiShoppingCart className=" h-5 w-5" />
+                Add To Cart
+              </button>
+            )
+          }
         </div>
       </div>
     </div>

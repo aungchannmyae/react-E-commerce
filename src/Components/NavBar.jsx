@@ -60,7 +60,7 @@ const NavBar = ({  }) => {
             </div>
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
-                href="commercial"
+                href="#commercial"
                 className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Commercial

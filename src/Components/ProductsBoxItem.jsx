@@ -14,7 +14,7 @@ const ProductsBoxItem = ({
   },
 }) => {
   const { setProductsItemBox } = useGeneralStore();
-  const { products, itemBoxProducts, filterItemBoxProducts } =
+  const { products, itemBoxProducts, filterItemBoxProducts, carts } =
     useProductsStore();
   const handleItemBoxProducts = () => {
     setProductsItemBox();
@@ -24,7 +24,7 @@ const ProductsBoxItem = ({
     <div
       onClick={handleItemBoxProducts}
       key={id}
-      className="px-2 flex flex-col group duration-200 active:scale-95 col-span-1 h-[280px] bg-white rounded-md"
+      className={` px-2 flex flex-col group duration-200 active:scale-95 col-span-1 h-[280px] bg-white rounded-md`}
     >
       <div className=" h-[160px] flex items-center justify-start border-b-[1px] border-b-black">
         <img

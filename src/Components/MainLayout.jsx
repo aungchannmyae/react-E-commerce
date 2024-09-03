@@ -9,11 +9,15 @@ import ProductsItemBox from "./ProductsItemBox";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useProductsStore from "../store/ProductStore";
+import useGeneralStore from "../store/GeneralStore";
+import Commercial from "./Commercial";
 
 const MainLayout = () => {
+  const { cartDrawer, setCartDrawer } = useGeneralStore();
+
   return (
     <>
-      <main className={` overflow-x-hidden`}>
+      <main className={` relative overflow-x-hidden`}>
         <header className=" select-none w-full flex">
           <Link
             to={`/`}
@@ -30,6 +34,7 @@ const MainLayout = () => {
         <ProductsBox></ProductsBox>
         <CartDrawer></CartDrawer>
         <ProductsItemBox></ProductsItemBox>
+        <Commercial/>
       </main>
     </>
   );
