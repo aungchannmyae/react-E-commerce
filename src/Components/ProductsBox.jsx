@@ -22,7 +22,7 @@ const ProductsBox = ({}) => {
       <div
         className={` ${
           productsBox && " translate-y-0 opacity-100 "
-        } z-[999999] opacity-0 -translate-y-full duration-500 h-[650px] fixed top-5 right-40 rounded-2xl bg-slate-300 p-10 w-[1200px] overflow-hidden`}
+        } z-[999999] opacity-0 -translate-y-full duration-500 lg:h-[800px] xl:h-[650px] fixed lg:top-10 xl:top-5 lg:right-8 xl:right-40 rounded-2xl bg-slate-300 p-10 lg:w-[950px] xl:w-[1200px] overflow-hidden shadow-2xl`}
       >
         <div className=" w-full">
           <div className=" grid grid-cols-11 gap-4">
@@ -76,7 +76,7 @@ const ProductsBox = ({}) => {
           </div>
 
           <div className="">
-            <div className=" scrollbar-hide grid grid-flow-row grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 h-[488px] overflow-y-scroll">
+            <div className=" scrollbar-hide grid grid-flow-row lg:grid-cols-4 xl:grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 lg:h-[640px] xl:h-[488px] overflow-y-scroll">
               {products
                 .filter(
                   (product) =>

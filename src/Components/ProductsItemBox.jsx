@@ -13,7 +13,7 @@ const ProductsItemBox = ({}) => {
       <div
         className={` ${
           productsItemBox && " translate-y-32 opacity-100 "
-        } z-[999999998] backdrop-blur-sm shadow-2xl opacity-0 -translate-y-full duration-500 h-[500px] w-[800px] fixed bottom-56 right-[350px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 `}
+        } z-[999999998] backdrop-blur-sm opacity-0 -translate-y-full duration-500 h-[500px] w-[800px] fixed bottom-56 right-[350px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 shadow-2xl `}
       >
         {itemBoxProducts.map((itemBoxProduct) => (
           <ProductsItemBoxSection key={itemBoxProduct.id} itemBoxProduct={itemBoxProduct}/>

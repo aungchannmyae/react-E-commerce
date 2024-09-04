@@ -19,8 +19,8 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
 
   return (
     <div
-      className={` relative z-20 overflow-hidden w-[200px] duration-700 h-[350px] rounded-lg ${
-        isActive ? " duration-700 w-[835px]" : " w-[100px]"
+      className={` relative z-20 overflow-hidden lg:w-[200px] xl:w-[200px] duration-700 h-[350px] rounded-lg ${
+        isActive ? " duration-700 lg:w-[590px] xl:w-[835px]" : " lg:w-[90px] xl:w-[100px]"
       } `}
     >
       <button

@@ -8,7 +8,7 @@ const Footer = () => {
       className=" text-white w-full bg-black p-5 py-10 rounded-lg"
     >
       <Container className="">
-        <div className=" grid grid-cols-5 gap-5 selection:bg-red-600">
+        <div className=" grid grid-cols-5 lg:gap-4 xl:gap-5 selection:bg-red-600">
           <div className=" col-span-1">
             <h1 className=" text-lg mb-2">About Us</h1>
             <ul className=" text-xs p-[1px] *:my-1">

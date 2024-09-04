@@ -13,7 +13,7 @@ const NewArrivals = ({}) => {
   const { newArrivalProductSection1, newArrivalProductSection2 } =
     useProductsStore();
   return (
-    <div id="newArrivals" className=" my-5 m-auto w-[1400px] h-[480px] ">
+    <div id="newArrivals" className=" my-5 m-auto lg:w-[950px] xl:w-[1400px] h-[480px] ">
       <div className=" -mb-7">
         <Container>
           <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">
@@ -76,7 +76,7 @@ const NewArrivals = ({}) => {
         slideInterval={10000}
       >
         <div className=" rounded-xl cursor-default bg-slate-200 flex justify-center mx-auto">
-          <div className=" p-6 gap-8 grid grid-cols-4">
+          <div className=" lg:p-4 xl:p-6 lg:gap-3 xl:gap-8 grid grid-cols-4">
             {newArrivalProductSection1.map((newProduct) => (
               <NewArrivalSection1 key={newProduct.id} newProduct={newProduct} />
             ))}
@@ -84,7 +84,7 @@ const NewArrivals = ({}) => {
         </div>
 
         <div className=" rounded-xl cursor-default bg-slate-200 flex justify-center mx-auto">
-          <div className=" p-6 gap-8 grid grid-cols-4">
+          <div className=" lg:p-4 xl:p-6 lg:gap-3 xl:gap-8 grid grid-cols-4">
             {newArrivalProductSection2.map((newProduct) => (
               <NewArrivalSection2
                 key={newProduct.id}
