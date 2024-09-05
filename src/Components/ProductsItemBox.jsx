@@ -12,21 +12,33 @@ const ProductsItemBox = ({}) => {
     <div>
       <div
         className={` ${
-          productsItemBox && " translate-y-32 opacity-100 "
-        } z-[999999998] backdrop-blur-sm opacity-0 -translate-y-full duration-500 h-[500px] w-[800px] fixed bottom-56 right-[350px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 shadow-2xl `}
+          productsItemBox
+            ? " translate-y-0 opacity-100 duration-300"
+            : "opacity-0 -translate-y-full duration-500"
+        } fixed top-0 right-0 w-full h-screen z-[999]`}
       >
-        {itemBoxProducts.map((itemBoxProduct) => (
-          <ProductsItemBoxSection key={itemBoxProduct.id} itemBoxProduct={itemBoxProduct}/>
-        ))}
-      </div>
+        <div className=" flex justify-center items-center lg:mt-10 xl:mt-20">
+          <div
+            className={` z-[9999] backdrop-blur-sm h-[500px] w-[800px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 shadow-2xl `}
+          >
+            {itemBoxProducts.map((itemBoxProduct) => (
+              <ProductsItemBoxSection
+                key={itemBoxProduct.id}
+                itemBoxProduct={itemBoxProduct}
+              />
+            ))}
+          </div>
+        </div>
 
-      <div
-        onClick={setProductsItemBox}
-        className={`${
-          productsItemBox &&
-          " translate-y-[px] backdrop-blur-sm opacity-100 fixed top-0 left-0 bg-slate-100 bg-opacity-75 w-[1519px] h-screen z-[999999997] "
-        } opacity-0 -translate-y-[1300px] duration-300`}
-      ></div>
+        <div
+          onClick={setProductsItemBox}
+          className={`${
+            productsItemBox
+              ? " translate-y-[px] backdrop-blur-sm duration-200 opacity-100"
+              : " opacity-0 -translate-y-[1300px] duration-500"
+          } fixed top-0 left-0 bg-slate-100 bg-opacity-75 w-[1519px] h-screen z-[9998] `}
+        ></div>
+      </div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const ProductsItemBoxSection = ({ itemBoxProduct }) => {
   };
 
   return (
-    <div className=" overflow-hidden grid grid-cols-3 gap-3 bg-white rounded-lg h-full ">
+    <div className=" select-none overflow-hidden grid grid-cols-3 gap-3 bg-white rounded-lg h-full ">
       <div className=" overflow-hidden col-span-2 flex gap-2 p-3">
         <div className=" w-1/2 bg pt-10 flex flex-col items-center gap-5 ">
           <img className=" w-3/5 " src={itemBoxProduct.image} alt="" />
