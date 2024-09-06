@@ -13,6 +13,7 @@ import useGeneralStore from "../store/GeneralStore";
 import Commercial from "./Commercial";
 import Footer from "./Footer";
 import Testing from "./Testing";
+import Screen from "./Screen";
 
 const MainLayout = () => {
   const { cartDrawer, setCartDrawer } = useGeneralStore();
@@ -38,6 +39,7 @@ const MainLayout = () => {
         <CartDrawer></CartDrawer>
         <ProductsItemBox></ProductsItemBox>
         <Commercial/>
+        <Screen/>
         <Footer/>
       </main>
     </>

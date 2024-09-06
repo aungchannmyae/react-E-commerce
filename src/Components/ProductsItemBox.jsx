@@ -19,7 +19,7 @@ const ProductsItemBox = ({}) => {
       >
         <div className=" flex justify-center items-center lg:mt-10 xl:mt-20">
           <div
-            className={` z-[9999] backdrop-blur-sm h-[500px] w-[800px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 shadow-2xl `}
+            className={` z-[9999] backdrop-blur-sm max-md:h-full md:h-[500px] max-md:w-full md:w-[800px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 shadow-2xl `}
           >
             {itemBoxProducts.map((itemBoxProduct) => (
               <ProductsItemBoxSection

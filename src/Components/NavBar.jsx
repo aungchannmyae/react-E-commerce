@@ -14,9 +14,9 @@ const NavBar = ({  }) => {
 
   return (
     <Container>
-      <nav className=" border border-r-0 border-l-0 border-black select-none">
-        <div className=" flex justify-between items-center">
-          <div onClick={setProductsBox} className=" cursor-pointer flex justify-center items-center w-[50px] py-3 hover:scale-125 duration-200">
+      <nav className=" max-md:hidden border border-r-0 border-l-0 border-black select-none">
+        <div className=" flex max-sm:justify-between max-sm:px-4 max-md:justify-around justify-between items-center">
+          <div onClick={setProductsBox} className=" cursor-pointer flex justify-center items-center w-[50px] max-md:py-2 py-3 hover:scale-125 duration-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -33,11 +33,11 @@ const NavBar = ({  }) => {
             </svg>
           </div>
 
-          <div className=" flex">
+          <div className=" max-sm:hidden flex">
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#newArrivals"
-                className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Latest Arrivals
               </a>
@@ -45,7 +45,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#favorite"
-                className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Favorite
               </a>
@@ -53,7 +53,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#categories"
-                className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Categories
               </a>
@@ -61,7 +61,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#commercial"
-                className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Commercial
               </a>
@@ -69,7 +69,7 @@ const NavBar = ({  }) => {
             <div className="  justify-center items-center flex">
               <a
                 href="#aboutUs"
-                className=" py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 About Us
               </a>
@@ -78,7 +78,7 @@ const NavBar = ({  }) => {
           
           <div
             onClick={setCartDrawer}
-            className=" relative active:scale-90 cursor-pointer flex justify-center items-center w-[50px] py-3 hover:scale-110 duration-200"
+            className=" relative active:scale-90 cursor-pointer flex justify-center items-center w-[50px] max-md:py-2 py-3 hover:scale-110 duration-200"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

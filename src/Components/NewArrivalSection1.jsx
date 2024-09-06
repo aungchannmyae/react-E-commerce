@@ -19,16 +19,16 @@ const NewArrivalSection1 = ({ newProduct }) => {
       key={newProduct.id}
       className=" cursor-pointer rounded-lg group duration-300 shadow-lg bg-white lg:w-[220px] xl:w-[280px] col-span-1 border "
     >
-      <div className=" flex flex-col justify-center m-1 p-4">
+      <div className=" flex flex-col justify-center m-1 max-md:p-2 p-4">
         <div>
           <img
-            className=" duration-500 group-hover:scale-90 py-5 mx-auto lg:h-[180px] xl:h-[200px] mb-2"
+            className=" duration-500 group-hover:scale-90 max-md:py-0 py-5 mx-auto max-md:h-[60px] lg:h-[180px] xl:h-[200px] mb-2"
             src={newProduct.image}
             alt=""
           />
         </div>
-        <div className=" text-black h-[100px] flex flex-col gap-0">
-          <h1 className=" lg:h-[50px] xl:h-[60px] box-heading-text lg:text-base xl:text-lg line-clamp-2 font-semibold ">
+        <div className=" text-black max-md:h-[50px] h-[100px] flex flex-col gap-0">
+          <h1 className=" max-md:h-[25px] lg:h-[50px] xl:h-[60px] box-heading-text max-md:text-sm lg:text-base xl:text-lg line-clamp-2 font-semibold ">
             {newProduct.title}
           </h1>
           <span className="">$ {newProduct.price}</span>

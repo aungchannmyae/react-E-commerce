@@ -19,8 +19,8 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
 
   return (
     <div
-      className={` relative z-20 overflow-hidden lg:w-[200px] xl:w-[200px] duration-700 h-[350px] rounded-lg ${
-        isActive ? " duration-700 lg:w-[590px] xl:w-[835px]" : " lg:w-[90px] xl:w-[100px]"
+      className={` relative z-20 overflow-hidden lg:w-[200px] xl:w-[200px] duration-700 max-md:h-[200px] h-[350px] rounded-lg ${
+        isActive ? " duration-700 lg:w-[590px] xl:w-[835px]" : " max-sm:w-[50px] lg:w-[90px] xl:w-[96px]"
       } `}
     >
       <button
@@ -37,12 +37,12 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
           } text-black font-semibold w-[140px] flex flex-row items-center duration-1000 p-2`}
           onClick={openProductsBox}
         >
-          <p className=" w-[80px]">See More</p>
+          <p className=" max-sm:text-sm w-[80px]">See More</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className=" animate-ping size-5 ml-2"
+            className=" animate-ping max-sm:size-3 size-5 ml-2"
           >
             <path
               fillRule="evenodd"
@@ -68,7 +68,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-10 p-2 animate-ping duration-1000 "
+            className="size-10 max-sm:size-8 p-2 animate-ping duration-1000 "
           >
             <path
               strokeLinecap="round"
@@ -81,7 +81,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
       <div
         className={` ${
           !isActive && "pointer-events-none"
-        } bg-transparent h-full scroll-smooth carousel carousel-center space-x-4 p-0`}
+        } bg-transparent h-full scroll-smooth carousel carousel-center max-md:space-x-0 space-x-4 p-0`}
       >
         {products
           .filter((el) => el.category === name)
@@ -91,7 +91,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
           .slice(0, 4)}
       </div>
       <div> 
-        <div className={` ${ isActive ? " translate-y-0 duration-1000" : " -translate-y-20"} uppercase bg-red-600 text-black shadow-xl py-1.5 rounded-br-3xl rounded-tl-lg px-5 text-nowrap absolute top-0 left-0`}>
+        <div className={` ${ isActive ? " translate-y-0 duration-1000" : " -translate-y-20"} max-md:hidden uppercase bg-red-600 text-black shadow-xl py-1.5 rounded-br-3xl rounded-tl-lg px-5 text-nowrap absolute top-0 left-0`}>
           <p><span className=" font-semibold text-lg italic">{name}</span> Collections</p>
         </div>
       </div>

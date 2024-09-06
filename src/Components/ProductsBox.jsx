@@ -28,7 +28,7 @@ const ProductsBox = ({}) => {
       >
         <div className=" flex justify-center items-center lg:mt-8 xl:mt-5">
           <div
-            className={` duration-500 lg:h-[800px] xl:h-[650px] rounded-2xl bg-slate-300 p-10 lg:w-[940px] xl:w-[1200px] z-[9999] overflow-hidden shadow-2xl`}
+            className={` duration-500 max-md:h-full lg:h-[700px] xl:h-[650px] rounded-2xl bg-slate-300 p-10 max-md:w-full lg:w-[940px] xl:w-[1200px] z-[9999] overflow-hidden shadow-2xl`}
           >
             <div className=" w-full">
               <div className=" grid grid-cols-11 gap-4">
@@ -79,7 +79,7 @@ const ProductsBox = ({}) => {
               </div>
 
               <div className="">
-                <div className=" scrollbar-hide grid grid-flow-row lg:grid-cols-4 xl:grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 lg:h-[640px] xl:h-[488px] overflow-y-scroll">
+                <div className=" scrollbar-hide grid grid-flow-row lg:grid-cols-4 xl:grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 lg:h-[540px] xl:h-[488px] overflow-y-scroll">
                   {products
                     .filter(
                       (product) =>

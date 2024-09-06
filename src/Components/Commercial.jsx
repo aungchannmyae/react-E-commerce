@@ -7,10 +7,10 @@ const Commercial = () => {
   return (
     <div id="commercial">
       <Container>
-        <div className=" select-none bg-slate-200 mt-10 my-5 grid grid-cols-2">
-          <div className=" col-span-1 flex items-center justify-center bg-slate-400">
+        <div className=" max-md:hidden select-none bg-slate-200 mt-10 mb-5 grid max-md:grid-rows-2 md:grid-cols-2">
+          <div className=" max-md:row-span-1 md:col-span-1 flex items-center justify-center bg-slate-400">
             <svg
-            className=" w-[500px]"
+            className=" max-md:w-[200px] max-md:h-[250px] md:w-[500px]"
               xmlns="http://www.w3.org/2000/svg"
               width="1004.72188"
               height="420.71758"
@@ -252,15 +252,15 @@ const Commercial = () => {
               />
             </svg>
           </div>
-          <div className=" col-span-1 flex flex-col items-center justify-center">
-            <span className=" bg-red-600 px-3 py-2 font-semibold text-lg">Hurry Up!</span>
-            <p className=" font-mono text-3xl text-center mt-5">
+          <div className=" max-md:row-span-1 md:col-span-1 flex flex-col items-center justify-center">
+            <span className=" bg-red-600 px-3 max-md:py-1 md:py-2 font-semibold text-lg">Hurry Up!</span>
+            <p className=" font-mono max-md:text-xl md:text-3xl text-center max-md:mt-2 md:mt-5">
               <span className=" font-bold text-red-600 italic">Free shipping</span> is available for purchases over{" "}
               <span className=" font-bold text-red-600">$800</span>
             </p>
-            <p className=" text-2xl font-mono mt-5">Only <span className=" text-red-600 underline">10</span> days left</p>
-            <p className=" text-xl mt-5">Now! Grab your items to cart</p>
-            <button onClick={setProductsBox} className=" cursor-pointer font-medium active:scale-105 duration-200 text-red-600 hover:bg-red-600 hover:text-white py-2 px-4 mt-5">Shop now</button>
+            <p className=" text-2xl font-mono max-md:mt-2 md:mt-5">Only <span className=" text-red-600 underline">10</span> days left</p>
+            <p className=" text-xl max-md:mt-2 md:mt-5">Now! Grab your items to cart</p>
+            <button onClick={setProductsBox} className=" cursor-pointer font-medium active:scale-105 duration-200 text-red-600 hover:bg-red-600 hover:text-white py-2 px-4 max-md:mt-2 md:mt-5">Shop now</button>
           </div>
         </div>
       </Container>
