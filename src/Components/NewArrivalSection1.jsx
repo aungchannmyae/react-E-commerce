@@ -17,12 +17,12 @@ const NewArrivalSection1 = ({ newProduct }) => {
     <div
       onClick={handleItemBoxProducts}
       key={newProduct.id}
-      className=" cursor-pointer rounded-lg group duration-300 shadow-lg bg-white lg:w-[220px] xl:w-[280px] col-span-1 border "
+      className=" cursor-pointer rounded-lg group duration-300 shadow-lg bg-white md:w-[160px] lg:w-[220px] xl:w-[280px] col-span-1 border "
     >
-      <div className=" flex flex-col justify-center m-1 max-md:p-2 p-4">
+      <div className=" flex flex-col justify-center m-1 max-md:p-2 md:p-2 lg:p-4">
         <div>
           <img
-            className=" duration-500 group-hover:scale-90 max-md:py-0 py-5 mx-auto max-md:h-[60px] lg:h-[180px] xl:h-[200px] mb-2"
+            className=" duration-500 group-hover:scale-90 max-md:py-0 py-5 mx-auto max-md:h-[60px] md:h-[140px] lg:h-[180px] xl:h-[200px] mb-2"
             src={newProduct.image}
             alt=""
           />

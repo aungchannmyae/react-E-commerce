@@ -26,9 +26,9 @@ const ProductsBox = ({}) => {
             : "opacity-0 -translate-y-full duration-300"
         } fixed top-0 right-0 w-full h-screen z-[999]`}
       >
-        <div className=" flex justify-center items-center lg:mt-8 xl:mt-5">
+        <div className=" flex justify-center items-center md:mt-4 lg:mt-8 xl:mt-5">
           <div
-            className={` duration-500 max-md:h-full lg:h-[700px] xl:h-[650px] rounded-2xl bg-slate-300 p-10 max-md:w-full lg:w-[940px] xl:w-[1200px] z-[9999] overflow-hidden shadow-2xl`}
+            className={` duration-500 max-md:h-[650px] lg:h-[700px] xl:h-[650px] rounded-2xl bg-slate-300 p-10 max-md:w-full lg:w-[940px] xl:w-[1200px] z-[9999] overflow-hidden shadow-2xl`}
           >
             <div className=" w-full">
               <div className=" grid grid-cols-11 gap-4">
@@ -54,7 +54,7 @@ const ProductsBox = ({}) => {
                   />
                 </div>
 
-                <div className=" col-span-7 category-bar flex gap-2 overflow-x-auto ">
+                <div className=" col-span-7 category-bar flex gap-2 overflow-x-auto scrollbar-hide ">
                   {categories.map((category) => (
                     <CategoryBtn key={category.id} category={category} />
                   ))}
@@ -79,7 +79,7 @@ const ProductsBox = ({}) => {
               </div>
 
               <div className="">
-                <div className=" scrollbar-hide grid grid-flow-row lg:grid-cols-4 xl:grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 lg:h-[540px] xl:h-[488px] overflow-y-scroll">
+                <div className=" scrollbar-hide grid grid-flow-row md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 rounded-lg bg-slate-100 mt-10 p-1 md:h-[700px] lg:h-[540px] xl:h-[488px] overflow-y-scroll">
                   {products
                     .filter(
                       (product) =>

@@ -37,7 +37,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#newArrivals"
-                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 md:py-2 md:px-3 lg:py-3 lg:px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Latest Arrivals
               </a>
@@ -45,7 +45,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#favorite"
-                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 md:py-2 md:px-3 lg:py-3 lg:px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Favorite
               </a>
@@ -53,7 +53,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#categories"
-                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 md:py-2 md:px-3 lg:py-3 lg:px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Categories
               </a>
@@ -61,7 +61,7 @@ const NavBar = ({  }) => {
             <div className=" border border-t-0 border-b-0 border-l-0 border-r-black justify-center items-center flex">
               <a
                 href="#commercial"
-                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 md:py-2 md:px-3 lg:py-3 lg:px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 Commercial
               </a>
@@ -69,7 +69,7 @@ const NavBar = ({  }) => {
             <div className="  justify-center items-center flex">
               <a
                 href="#aboutUs"
-                className=" max-md:py-1 max-md:px-2 py-3 px-5 text-lg hover:underline hover:text-xl duration-500"
+                className=" max-md:py-1 max-md:px-2 md:py-2 md:px-3 lg:py-3 lg:px-5 text-lg hover:underline hover:text-xl duration-500"
               >
                 About Us
               </a>

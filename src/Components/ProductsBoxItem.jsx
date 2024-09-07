@@ -29,7 +29,7 @@ const ProductsBoxItem = ({
     >
       <div className=" h-[160px] flex items-center justify-start border-b-[1px] border-b-black">
         <img
-          className=" group-hover:scale-95 duration-200 lg:h-[130px] xl:h-[150px]"
+          className=" group-hover:scale-95 duration-200 md:h-[110px] lg:h-[130px] xl:h-[150px]"
           src={image}
           alt=""
         />

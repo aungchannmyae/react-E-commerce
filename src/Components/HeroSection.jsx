@@ -45,7 +45,7 @@ const FavoriteSection = ({}) => {
 
 
   return (
-    <div id="favorite" className=" max-md:hidden border border-t-black border-r-0 border-b-black border-l-0 py-5 lg:mx-6 xl:mx-10 2xl:mx-14 max-md:h-[] md:h-[520px]">
+    <div id="favorite" className=" max-md:hidden border border-t-black border-r-0 border-b-black border-l-0 py-5 lg:mx-6 xl:mx-10 2xl:mx-14 md:h-[480px] lg:h-[520px]">
       <div className=" mb-5">
         <Container>
           <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">

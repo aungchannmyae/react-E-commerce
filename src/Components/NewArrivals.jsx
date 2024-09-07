@@ -12,7 +12,7 @@ const NewArrivals = ({}) => {
   const { newArrivalProductSection1, newArrivalProductSection2 } =
     useProductsStore();
   return (
-    <div id="newArrivals" className=" max-md:hidden my-5 m-auto lg:w-[950px] xl:w-[1250px] 2xl:w-[1400px] max-md:h-[440px] md:h-[480px] ">
+    <div id="newArrivals" className=" max-md:hidden my-5 m-auto md:w-[720px] lg:w-[950px] xl:w-[1250px] 2xl:w-[1400px] max-md:h-[440px] md:h-[440px] lg:h-[480px] ">
       <div className=" -mb-7">
         <Container>
           <h1 className=" flex flex-row items-end text-lg underline underline-offset-4">
@@ -75,7 +75,7 @@ const NewArrivals = ({}) => {
         slideInterval={10000}
       >
         <div className=" rounded-xl cursor-default bg-slate-200 flex justify-center mx-auto">
-          <div className=" max-md:p-2 lg:p-4 xl:p-6 max-md:gap-2 lg:gap-3 xl:gap-8 grid max-md:grid-cols-2 md:grid-cols-4">
+          <div className=" max-md:p-2 md:p-4 lg:p-4 xl:p-6 max-md:gap-2 md:gap-4 xl:gap-8 grid max-md:grid-cols-2 md:grid-cols-4">
             {newArrivalProductSection1.map((newProduct) => (
               <NewArrivalSection1 key={newProduct.id} newProduct={newProduct} />
             ))}
@@ -83,7 +83,7 @@ const NewArrivals = ({}) => {
         </div>
 
         <div className=" rounded-xl cursor-default bg-slate-200 flex justify-center mx-auto">
-          <div className=" max-md:p-2 lg:p-4 xl:p-6 max-md:gap-2 lg:gap-3 xl:gap-8 grid max-md:grid-cols-2 grid-cols-4">
+          <div className=" max-md:p-2 md:p-4 lg:p-4 xl:p-6 max-md:gap-2 md:gap-4 xl:gap-8 grid max-md:grid-cols-2 grid-cols-4">
             {newArrivalProductSection2.map((newProduct) => (
               <NewArrivalSection1
                 key={newProduct.id}

@@ -9,14 +9,14 @@ const Hero = () => {
       <Container>
         <section className=" relative overflow-hidden select-none h-full grid grid-cols-2 gap-5 max-sm:p-3 py-20">
           <div className=" z-10 max-sm:col-span-2 md:col-span-1 flex flex-col justify-center items-start md:ml-10 ">
-            <h1 className="mb-10 max-sm:text-2xl lg:text-3xl xl:text-4xl text-red-600 font-bold">Discover Premium Quality Products at Unbeatable Prices!</h1>
-            <p className=" mb-5 lg:text-xl xl:text-2xl text-black font-semibold max-sm:w-[200px]">Shop the latest trends in fashion, electronics, and home essentials.</p>
+            <h1 className="mb-10 max-lg:text-2xl lg:text-3xl xl:text-4xl text-red-600 font-bold">Discover Premium Quality Products at Unbeatable Prices!</h1>
+            <p className=" mb-5 md:text-xl xl:text-2xl text-black font-semibold max-sm:w-[200px]">Shop the latest trends in fashion, electronics, and home essentials.</p>
             <div>
               <button onClick={setProductsBox} className=" cursor-pointer font-medium active:scale-105 duration-200 bg-red-600 py-2 px-4">Shop now</button>
             </div>
           </div>
           <svg
-            className=" z-10 absolute right-5 -top-3 md:col-span-1 max-sm:w-[150px] max-xl:w-[400px]"
+            className=" z-10 absolute right-5 -top-3 md:col-span-1 max-sm:w-[150px] md:w-[340px] max-xl:w-[400px]"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
             width="500"

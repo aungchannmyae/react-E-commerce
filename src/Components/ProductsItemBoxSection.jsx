@@ -28,7 +28,7 @@ const ProductsItemBoxSection = ({ itemBoxProduct }) => {
           </div>
         </div>
         <div className=" w-1/2 pt-10 h-full">
-          <h1 className=" flex justify-center mb-5 items-center text-lg font-semibold text-center ">
+          <h1 className=" flex justify-center h-[100px] overflow-auto scrollbar-hide mb-5 items-center text-lg font-semibold text-center ">
             {itemBoxProduct.title}
           </h1>
           <p className=" h-[200px] overflow-y-scroll text-center mb-5 text-pretty text-sm scrollbar-hide">

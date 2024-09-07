@@ -17,7 +17,7 @@ const ProductsItemBox = ({}) => {
             : "opacity-0 -translate-y-full duration-500"
         } fixed top-0 right-0 w-full h-screen z-[999]`}
       >
-        <div className=" flex justify-center items-center lg:mt-10 xl:mt-20">
+        <div className=" flex justify-center items-center md:mt-5 lg:mt-10 xl:mt-20">
           <div
             className={` z-[9999] backdrop-blur-sm max-md:h-full md:h-[500px] max-md:w-full md:w-[800px] rounded-2xl bg-slate-400 bg-opacity-70 p-5 shadow-2xl `}
           >

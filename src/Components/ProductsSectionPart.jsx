@@ -20,7 +20,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
   return (
     <div
       className={` relative z-20 overflow-hidden lg:w-[200px] xl:w-[200px] duration-700 max-md:h-[200px] h-[350px] rounded-lg ${
-        isActive ? " duration-700 lg:w-[590px] xl:w-[835px]" : " max-sm:w-[50px] lg:w-[90px] xl:w-[96px]"
+        isActive ? " duration-700 md:w-[450px] lg:w-[590px] xl:w-[835px]" : " max-sm:w-[50px] md:w-[70px] lg:w-[90px] xl:w-[96px]"
       } `}
     >
       <button
@@ -91,7 +91,7 @@ const ProductsSectionPart = ({ product: { id, name, isActive } }) => {
           .slice(0, 4)}
       </div>
       <div> 
-        <div className={` ${ isActive ? " translate-y-0 duration-1000" : " -translate-y-20"} max-md:hidden uppercase bg-red-600 text-black shadow-xl py-1.5 rounded-br-3xl rounded-tl-lg px-5 text-nowrap absolute top-0 left-0`}>
+        <div className={` ${ isActive ? " translate-y-0 duration-1000" : " -translate-y-20"} max-lg:hidden uppercase bg-red-600 text-black shadow-xl py-1.5 rounded-br-3xl rounded-tl-lg px-5 text-nowrap absolute top-0 left-0`}>
           <p><span className=" font-semibold text-lg italic">{name}</span> Collections</p>
         </div>
       </div>

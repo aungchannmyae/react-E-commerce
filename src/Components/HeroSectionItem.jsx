@@ -18,7 +18,7 @@ const HeroSectionItem = ({ heroProduct }) => {
         <div className="relative max-md:gap-2 md:gap-8 grid max-md:grid-rows-6 md:grid-cols-6 max-md:h max-md:h-[440px] md:h-[360px]">
           <div className=" shadow-lg rounded-lg flex items-center justify-center max-md:hidden md:col-span-2 bg-white">
             <div className="">
-              <img className=" w-[200px]" src={heroProduct.image} alt=""/>
+              <img className=" md:w-[160px] lg:w-[200px]" src={heroProduct.image} alt=""/>
             </div>
           </div>
 
@@ -26,10 +26,10 @@ const HeroSectionItem = ({ heroProduct }) => {
             <div className=" shadow-lg rounded-lg mr-3 h-[180px] bg-white flex items-center justify-center float-left md:hidden">
               <img className=" w-[100px]" src={heroProduct.image} alt="" />
             </div>
-            <h1 className=" max-md:line-clamp-3 max-md:h-[180px] md:my-5 max-md:text-2xl md:text-3xl h-[60px] font-mono font-bold">
+            <h1 className=" max-md:line-clamp-3 max-md:h-[180px] md:h-[110px] lg:my-5 max-md:text-2xl md:text-3xl lg:h-[60px] font-mono font-bold overflow-hidden">
               {heroProduct.title}
             </h1>
-            <div className=" max-md:h-[160px] max-md:my-2 overflow-scroll scrollbar-hide">
+            <div className=" max-lg:h-[140px] max-md:my-2 overflow-scroll scrollbar-hide">
               <p className=" text-xl text-pretty indent-8 font-semibold">
                 {heroProduct.description}
               </p>
